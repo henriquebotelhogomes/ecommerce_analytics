@@ -1,0 +1,124 @@
+[build-system]
+requires = ["hatchling>=1.12.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "ecommerce-analytics"
+version = "1.0.0"
+description = "Solução completa de análise de e-commerce com BigQuery, FastAPI e Plotly Dash"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "MIT"}
+authors = [
+    {name = "Henrique Botelho Gomes", email = "henriquebotelho1@gmail.com"}
+]
+keywords = [
+    "ecommerce",
+    "analytics",
+    "bigquery",
+    "fastapi",
+    "plotly",
+    "dash",
+    "data-engineering",
+    "data-science",
+    "gcp",
+    "python"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Framework :: FastAPI",
+    "Framework :: Dash",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Information Technology",
+]
+
+dependencies = [
+    # BigQuery - VERSÕES COMPATÍVEIS COM PYTHON 3.12
+    "google-cloud-bigquery==3.14.1",
+    "google-cloud-bigquery-storage==2.24.0",
+    "db-dtypes==1.2.0",
+
+    # FastAPI
+    "fastapi==0.104.1",
+    "uvicorn[standard]==0.24.0",
+    "pydantic==2.5.0",
+    "pydantic-settings==2.1.0",
+
+    # Auth
+    "python-jose[cryptography]==3.3.0",
+    "passlib==1.7.4",
+    "argon2-cffi==23.1.0",
+    "python-multipart==0.0.6",
+
+    # Data - VERSÕES ATUALIZADAS PARA PYTHON 3.12
+    "pandas==2.2.0",
+    "numpy==1.26.4",
+    "pyarrow==15.0.0",
+
+    # Dashboard
+    "dash==2.14.1",
+    "plotly==5.18.0",
+    "dash-bootstrap-components==1.5.0",
+
+    # Utilities
+    "python-dotenv==1.0.0",
+    "requests==2.31.0",
+    "httpx==0.25.2",
+
+    # Logging
+    "python-json-logger==2.0.7",
+]
+
+[project.urls]
+Homepage = "https://github.com/henriquebotelhogomes/ecommerce_analytics"
+Documentation = "https://github.com/henriquebotelhogomes/ecommerce_analytics#readme"
+Source = "https://github.com/henriquebotelhogomes/ecommerce_analytics"
+"Bug Tracker" = "https://github.com/henriquebotelhogomes/ecommerce_analytics/issues"
+
+
+
+[project.optional-dependencies]
+dev = [
+    "pytest==7.4.3",
+    "pytest-cov==4.1.0",
+    "pytest-asyncio==0.21.1",
+    "black==23.12.0",
+    "ruff==0.1.8",
+    "mypy==1.7.1",
+    "pre-commit==3.5.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ecommerce_analytics"]
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+select = ["E", "F", "W", "I", "N", "UP"]
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=src/ecommerce_analytics --cov-report=html --cov-report=term-missing"
+markers = [
+    "unit: marca testes unitários",
+    "integration: marca testes de integração",
+    "e2e: marca testes end-to-end",
+    "slow: marca testes lentos",
+]
