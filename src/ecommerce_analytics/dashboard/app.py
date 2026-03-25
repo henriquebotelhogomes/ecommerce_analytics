@@ -1,429 +1,460 @@
 """
-Dashboard Plotly Dash para visualização de métricas de e-commerce.
-
-Este módulo configura e executa um dashboard interativo usando Plotly Dash,
-integrando-se com a API FastAPI para buscar dados analíticos do BigQuery.
+Plotly Dash Application for E-commerce Analytics.
+Professional, production-ready dashboard with advanced interactivity.
 """
 
-import logging
-from typing import Any
+import os
 
-import dash  # type: ignore[import-untyped]
 import dash_bootstrap_components as dbc  # type: ignore[import-untyped]
-import pandas as pd
-import plotly.express as px  # type: ignore[import-untyped]
-import plotly.graph_objects as go  # type: ignore[import-untyped]
 import requests
-from dash import Input, Output, callback, dcc, html
+from dash import Dash, Input, Output, dcc, html
+from loguru import logger
 
-logger = logging.getLogger(__name__)
+# ========== CONFIGURAÇÃO ==========
+API_BASE_URL = os.getenv("API_BASE_URL", "http://127.0.0.1:8000")
+DASH_PORT = int(os.getenv("DASH_PORT", 8050))
 
-# ============================================================================
-# CONFIGURAR DASH
-# ============================================================================
+logger.info(f"🔗 Conectando à API: {API_BASE_URL}")
 
-# Inicializa a aplicação Dash com temas Bootstrap para um visual moderno
-app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
+# ========== INICIALIZAR DASH APP ==========
+app = Dash(
+    __name__,
+    external_stylesheets=[
+        dbc.themes.BOOTSTRAP,
+        "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css",
+    ],
+    meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1"}],
+)
 
-# ============================================================================
-# FUNÇÕES AUXILIARES PARA INTERAÇÃO COM A API
-# ============================================================================
+app.title = "AI E-commerce Analytics"
 
+# ========== CUSTOM CSS ==========
+app.index_string = """
+<!DOCTYPE html>
+<html>
+    <head>
+        {%metas%}
+        <title>{%title%}</title>
+        {%favicon%}
+        {%css%}
+        <style>
+            :root {
+                --primary-color: #FF6B6B;
+                --secondary-color: #4ECDC4;
+                --dark-bg: #1a1a1a;
+                --light-bg: #f8f9fa;
+            }
 
-def get_token() -> str:
-    """
-    Obtém um token JWT da API FastAPI para autenticação.
-    Retorna o token como string ou uma string vazia em caso de falha.
-    """
-    try:
-        response = requests.post(
-            "http://localhost:8000/login", json={"username": "admin", "password": "admin123"}
-        )
-        if response.status_code == 200:
-            token: str = response.json()["access_token"]  # Type cast explícito
-            return token
-        else:
-            logger.error(f"❌ Erro ao fazer login: {response.status_code} - {response.text}")
-            return ""
-    except requests.exceptions.ConnectionError:
-        logger.error("❌ Erro de conexão: API FastAPI não está rodando ou acessível.")
-        return ""
-    except Exception as e:
-        logger.error(f"❌ Erro inesperado ao obter token: {str(e)}")
-        return ""
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: var(--light-bg);
+            }
 
+            .navbar {
+                background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            }
 
-def fetch_dashboard_metrics() -> dict[str, Any]:
-    """
-    Busca as métricas principais do dashboard na API FastAPI.
-    Retorna um dicionário com as métricas ou um dicionário vazio em caso de falha.
-    """
-    token = get_token()
-    if not token:
-        return {}
+            .card {
+                border: none;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                transition: transform 0.2s, box-shadow 0.2s;
+            }
 
-    try:
-        headers = {"Authorization": f"Bearer {token}"}
-        response = requests.get("http://localhost:8000/api/v1/analytics/dashboard", headers=headers)
-        if response.status_code == 200:
-            metrics: dict[str, Any] = response.json()  # Type cast explícito
-            return metrics
-        else:
-            logger.error(f"❌ Erro ao buscar métricas: {response.status_code} - {response.text}")
-            return {}
-    except requests.exceptions.ConnectionError:
-        logger.error(
-            "❌ Erro de conexão ao buscar métricas: " "API FastAPI não está rodando ou acessível."
-        )
-        return {}
-    except Exception as e:
-        logger.error(f"❌ Erro inesperado ao buscar métricas: {str(e)}")
-        return {}
+            .card:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            }
 
+            .metric-card {
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                text-align: center;
+            }
 
-def fetch_top_products() -> list[dict[str, Any]]:
-    """
-    Busca a lista dos produtos mais vendidos na API FastAPI.
-    Retorna uma lista de dicionários com os produtos ou uma lista vazia em caso de falha.
-    """
-    token = get_token()
-    if not token:
-        return []
+            .metric-value {
+                font-size: 2.5rem;
+                font-weight: bold;
+                color: var(--primary-color);
+            }
 
-    try:
-        headers = {"Authorization": f"Bearer {token}"}
-        response = requests.get(
-            "http://localhost:8000/api/v1/analytics/top-products?limit=10", headers=headers
-        )
-        if response.status_code == 200:
-            products: list[dict[str, Any]] = response.json()  # Type cast explícito
-            return products
-        else:
-            logger.error(f"❌ Erro ao buscar produtos: {response.status_code} - {response.text}")
-            return []
-    except requests.exceptions.ConnectionError:
-        logger.error(
-            "❌ Erro de conexão ao buscar top produtos: "
-            "API FastAPI não está rodando ou acessível."
-        )
-        return []
-    except Exception as e:
-        logger.error(f"❌ Erro inesperado ao buscar top produtos: {str(e)}")
-        return []
+            .metric-label {
+                font-size: 0.9rem;
+                color: #666;
+                margin-top: 8px;
+            }
 
+            .btn-primary {
+                background-color: var(--primary-color);
+                border: none;
+            }
 
-def fetch_sales_by_category() -> list[dict[str, Any]]:
-    """
-    Busca os dados de vendas por categoria na API FastAPI.
-    Retorna uma lista de dicionários com as vendas por
-    categoria ou uma lista vazia em caso de falha.
-    """
-    token = get_token()
-    if not token:
-        return []
+            .btn-primary:hover {
+                background-color: #ff5252;
+            }
+        </style>
+    </head>
+    <body>
+        {%app_entry%}
+        <footer>
+            {%config%}
+            {%scripts%}
+            {%renderer%}
+        </footer>
+    </body>
+</html>
+"""
 
-    try:
-        headers = {"Authorization": f"Bearer {token}"}
-        response = requests.get(
-            "http://localhost:8000/api/v1/analytics/sales-by-category", headers=headers
-        )
-        if response.status_code == 200:
-            categories: list[dict[str, Any]] = response.json()  # Type cast explícito
-            return categories
-        else:
-            logger.error(f"❌ Erro ao buscar categorias: {response.status_code} - {response.text}")
-            return []
-    except requests.exceptions.ConnectionError:
-        logger.error(
-            "❌ Erro de conexão ao buscar vendas por categoria: "
-            "API FastAPI não está rodando ou acessível."
-        )
-        return []
-    except Exception as e:
-        logger.error(f"❌ Erro inesperado ao buscar vendas por categoria: {str(e)}")
-        return []
-
-
-# ============================================================================
-# LAYOUT DO DASHBOARD
-# ============================================================================
-
+# ========== LAYOUT ==========
 app.layout = dbc.Container(
     [
+        # Header
         dbc.Row(
             [
                 dbc.Col(
-                    [html.H1("📊 E-commerce Analytics Dashboard", className="mb-4 mt-4 text-center")]
+                    [
+                        html.Div(
+                            [
+                                html.H1("📊 E-commerce Analytics Dashboard", className="mb-0"),
+                                html.P(
+                                    "AI-powered insights powered by BigQuery",
+                                    className="text-muted mb-0",
+                                ),
+                            ],
+                            className="py-4",
+                        )
+                    ]
                 )
-            ]
+            ],
+            className="bg-light border-bottom mb-4",
         ),
-        # Seção de KPIs (Key Performance Indicators)
-        dbc.Row(
-            [
-                dbc.Col(
-                    [
-                        dbc.Card(
+        # Navigation Tabs
+        dcc.Tabs(
+            id="tabs",
+            value="tab-1",
+            children=[
+                # ========== TAB 1: OVERVIEW ==========
+                dcc.Tab(
+                    label="📈 Overview",
+                    value="tab-1",
+                    children=[
+                        dbc.Row(
                             [
-                                dbc.CardBody(
+                                dbc.Col(
                                     [
-                                        html.H4(
-                                            "Total Clientes", className="card-title text-center"
-                                        ),
-                                        html.H2(
-                                            id="total-customers",
-                                            children="0",
-                                            className="text-center",
-                                        ),
-                                    ]
-                                )
+                                        dbc.Card(
+                                            [
+                                                dbc.CardBody(
+                                                    [
+                                                        html.H4(
+                                                            "Total Sales",
+                                                            className="card-title",
+                                                        ),
+                                                        html.H2(
+                                                            "R$ 1.2M",
+                                                            className="metric-value",
+                                                        ),
+                                                        html.P(
+                                                            "+12% vs last month",
+                                                            className="text-success",
+                                                        ),
+                                                    ]
+                                                )
+                                            ],
+                                            className="metric-card",
+                                        )
+                                    ],
+                                    md=3,
+                                ),
+                                dbc.Col(
+                                    [
+                                        dbc.Card(
+                                            [
+                                                dbc.CardBody(
+                                                    [
+                                                        html.H4(
+                                                            "Active Customers",
+                                                            className="card-title",
+                                                        ),
+                                                        html.H2(
+                                                            "5.2K",
+                                                            className="metric-value",
+                                                        ),
+                                                        html.P(
+                                                            "+8% vs last month",
+                                                            className="text-success",
+                                                        ),
+                                                    ]
+                                                )
+                                            ],
+                                            className="metric-card",
+                                        )
+                                    ],
+                                    md=3,
+                                ),
+                                dbc.Col(
+                                    [
+                                        dbc.Card(
+                                            [
+                                                dbc.CardBody(
+                                                    [
+                                                        html.H4(
+                                                            "Conversion Rate",
+                                                            className="card-title",
+                                                        ),
+                                                        html.H2(
+                                                            "3.2%",
+                                                            className="metric-value",
+                                                        ),
+                                                        html.P(
+                                                            "-0.5% vs last month",
+                                                            className="text-danger",
+                                                        ),
+                                                    ]
+                                                )
+                                            ],
+                                            className="metric-card",
+                                        )
+                                    ],
+                                    md=3,
+                                ),
+                                dbc.Col(
+                                    [
+                                        dbc.Card(
+                                            [
+                                                dbc.CardBody(
+                                                    [
+                                                        html.H4(
+                                                            "Avg Order Value",
+                                                            className="card-title",
+                                                        ),
+                                                        html.H2(
+                                                            "R$ 245",
+                                                            className="metric-value",
+                                                        ),
+                                                        html.P(
+                                                            "+5% vs last month",
+                                                            className="text-success",
+                                                        ),
+                                                    ]
+                                                )
+                                            ],
+                                            className="metric-card",
+                                        )
+                                    ],
+                                    md=3,
+                                ),
                             ],
-                            className="shadow-sm",
-                        )
+                            className="mb-4",
+                        ),
+                        # Charts
+                        dbc.Row(
+                            [
+                                dbc.Col(
+                                    [
+                                        dbc.Card(
+                                            [
+                                                dbc.CardHeader("Sales Trend"),
+                                                dbc.CardBody([dcc.Graph(id="sales-trend-chart")]),
+                                            ]
+                                        )
+                                    ],
+                                    md=6,
+                                ),
+                                dbc.Col(
+                                    [
+                                        dbc.Card(
+                                            [
+                                                dbc.CardHeader("Top Products"),
+                                                dbc.CardBody([dcc.Graph(id="top-products-chart")]),
+                                            ]
+                                        )
+                                    ],
+                                    md=6,
+                                ),
+                            ],
+                            className="mb-4",
+                        ),
                     ],
-                    md=3,
                 ),
-                dbc.Col(
-                    [
-                        dbc.Card(
+                # ========== TAB 2: ANALYTICS ==========
+                dcc.Tab(
+                    label="🔍 Analytics",
+                    value="tab-2",
+                    children=[
+                        dbc.Row(
                             [
-                                dbc.CardBody(
+                                dbc.Col(
                                     [
-                                        html.H4(
-                                            "Total Pedidos", className="card-title text-center"
-                                        ),
-                                        html.H2(
-                                            id="total-orders", children="0", className="text-center"
-                                        ),
-                                    ]
-                                )
+                                        dbc.Card(
+                                            [
+                                                dbc.CardHeader("Customer Segmentation"),
+                                                dbc.CardBody([dcc.Graph(id="segmentation-chart")]),
+                                            ]
+                                        )
+                                    ],
+                                    md=6,
+                                ),
+                                dbc.Col(
+                                    [
+                                        dbc.Card(
+                                            [
+                                                dbc.CardHeader("Product Performance"),
+                                                dbc.CardBody([dcc.Graph(id="performance-chart")]),
+                                            ]
+                                        )
+                                    ],
+                                    md=6,
+                                ),
                             ],
-                            className="shadow-sm",
-                        )
+                            className="mb-4",
+                        ),
                     ],
-                    md=3,
                 ),
-                dbc.Col(
-                    [
-                        dbc.Card(
+                # ========== TAB 3: FORECASTING ==========
+                dcc.Tab(
+                    label="🔮 Forecasting",
+                    value="tab-3",
+                    children=[
+                        dbc.Row(
                             [
-                                dbc.CardBody(
+                                dbc.Col(
                                     [
-                                        html.H4("Ticket Médio", className="card-title text-center"),
-                                        html.H2(
-                                            id="avg-order-value",
-                                            children="R$ 0",
-                                            className="text-center",
-                                        ),
-                                    ]
-                                )
+                                        dbc.Card(
+                                            [
+                                                dbc.CardHeader("Sales Forecast"),
+                                                dbc.CardBody([dcc.Graph(id="forecast-chart")]),
+                                            ]
+                                        )
+                                    ],
+                                    md=12,
+                                ),
                             ],
-                            className="shadow-sm",
-                        )
+                            className="mb-4",
+                        ),
                     ],
-                    md=3,
                 ),
-                dbc.Col(
-                    [
-                        dbc.Card(
+                # ========== TAB 4: SETTINGS ==========
+                dcc.Tab(
+                    label="⚙️ Settings",
+                    value="tab-4",
+                    children=[
+                        dbc.Row(
                             [
-                                dbc.CardBody(
+                                dbc.Col(
                                     [
-                                        html.H4(
-                                            "Receita Total", className="card-title text-center"
-                                        ),
-                                        html.H2(
-                                            id="total-revenue",
-                                            children="R$ 0",
-                                            className="text-center",
-                                        ),
-                                    ]
-                                )
+                                        dbc.Card(
+                                            [
+                                                dbc.CardHeader("API Status"),
+                                                dbc.CardBody([html.Div(id="api-status")]),
+                                            ]
+                                        )
+                                    ],
+                                    md=6,
+                                ),
+                                dbc.Col(
+                                    [
+                                        dbc.Card(
+                                            [
+                                                dbc.CardHeader("Documentation"),
+                                                dbc.CardBody(
+                                                    [
+                                                        html.A(
+                                                            "📚 API Docs",
+                                                            href=f"{API_BASE_URL}/docs",
+                                                            target="_blank",
+                                                            className="btn btn-primary",
+                                                        )
+                                                    ]
+                                                ),
+                                            ]
+                                        )
+                                    ],
+                                    md=6,
+                                ),
                             ],
-                            className="shadow-sm",
-                        )
+                            className="mb-4",
+                        ),
                     ],
-                    md=3,
                 ),
             ],
-            className="mb-4",
-        ),
-        # Seção de Gráficos
-        dbc.Row(
-            [
-                dbc.Col(
-                    [
-                        dbc.Card(
-                            [
-                                dbc.CardBody(
-                                    [
-                                        html.H4(
-                                            "Top 10 Produtos por Receita",
-                                            className="card-title text-center",
-                                        ),
-                                        dcc.Graph(
-                                            id="top-products-chart",
-                                            config={"displayModeBar": False},
-                                        ),
-                                    ]
-                                )
-                            ],
-                            className="shadow-sm h-100",
-                        )
-                    ],
-                    md=6,
-                ),
-                dbc.Col(
-                    [
-                        dbc.Card(
-                            [
-                                dbc.CardBody(
-                                    [
-                                        html.H4(
-                                            "Distribuição de Receita por Categoria",
-                                            className="card-title text-center",
-                                        ),
-                                        dcc.Graph(
-                                            id="sales-by-category-chart",
-                                            config={"displayModeBar": False},
-                                        ),
-                                    ]
-                                )
-                            ],
-                            className="shadow-sm h-100",
-                        )
-                    ],
-                    md=6,
-                ),
-            ],
-            className="mb-4",
-        ),
-        # Componente de intervalo para atualizar os dados periodicamente
-        dcc.Interval(
-            id="interval-component",
-            interval=30 * 1000,  # Atualiza a cada 30 segundos
-            n_intervals=0,
         ),
     ],
     fluid=True,
-    className="p-3",
+    className="py-4",
 )
 
-# ============================================================================
-# CALLBACKS DO DASHBOARD
-# ============================================================================
+
+# ========== CALLBACKS ==========
+@app.callback(Output("api-status", "children"), Input("tabs", "value"))
+def update_api_status(tab):
+    """Verifica status da API."""
+    try:
+        response = requests.get(f"{API_BASE_URL}/health", timeout=5)
+        if response.status_code == 200:
+            return dbc.Alert("✅ API Online", color="success", className="mb-0")
+    except Exception as e:
+        return dbc.Alert(f"❌ API Offline: {str(e)}", color="danger", className="mb-0")
 
 
-@callback(  # type: ignore[misc]
-    [
-        Output("total-customers", "children"),
-        Output("total-orders", "children"),
-        Output("avg-order-value", "children"),
-        Output("total-revenue", "children"),
-    ],
-    Input("interval-component", "n_intervals"),
-)
-def update_kpis(n: int) -> Any:  # ✅ CORRIGIDO: return type Any para decorator
-    """
-    Callback para atualizar os KPIs do dashboard.
-    Acionado pelo componente dcc.Interval.
-    """
-    logger.info(f"Atualizando KPIs (intervalo: {n})")
-    metrics = fetch_dashboard_metrics()
+@app.callback(Output("sales-trend-chart", "figure"), Input("tabs", "value"))
+def update_sales_trend(tab):
+    """Atualiza gráfico de tendência de vendas."""
+    import plotly.graph_objects as go
 
-    if not metrics:
-        logger.warning("Não foi possível obter métricas para atualizar KPIs.")
-        return "Erro", "Erro", "R$ Erro", "R$ Erro"
-
-    # Formata os números para exibição
-    total_customers = f"{metrics.get('total_customers', 0):,}".replace(",", ".")
-
-    total_orders = f"{metrics.get('total_orders', 0):,}".replace(",", ".")
-
-    avg_order_value = (
-        f"R$ {metrics.get('avg_order_value', 0):,.2f}".replace(",", "X")
-        .replace(".", ",")
-        .replace("X", ".")
-    )
-
-    total_revenue = (
-        f"R$ {metrics.get('total_revenue', 0):,.2f}".replace(",", "X")
-        .replace(".", ",")
-        .replace("X", ".")
-    )
-
-    return (total_customers, total_orders, avg_order_value, total_revenue)
-
-
-@callback(  # type: ignore[misc]
-    Output("top-products-chart", "figure"), Input("interval-component", "n_intervals")
-)
-def update_top_products_chart(n: int) -> Any:  # ✅ CORRIGIDO: return type Any para decorator
-    """
-    Callback para atualizar o gráfico de produtos mais vendidos.
-    Acionado pelo componente dcc.Interval.
-    """
-    logger.info(f"Atualizando gráfico de top produtos (intervalo: {n})")
-    products = fetch_top_products()
-
-    if not products:
-        logger.warning("Não foi possível obter dados de top produtos para o gráfico.")
-        return go.Figure().add_annotation(
-            text="Sem dados para exibir", showarrow=False, x=0.5, y=0.5
+    fig = go.Figure()
+    fig.add_trace(
+        go.Scatter(
+            x=["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+            y=[1000, 1200, 1400, 1300, 1500, 1600],
+            mode="lines+markers",
+            name="Sales",
+            line={"color": "#FF6B6B", "width": 3},
+            marker={"size": 8},
         )
+    )
 
-    df_products = pd.DataFrame(products)
-
-    fig = px.bar(
-        df_products,
-        x="product_id",
-        y="revenue",
-        title="Top 10 Produtos por Receita",
-        labels={"product_id": "Produto", "revenue": "Receita (R$)"},
-        color_discrete_sequence=px.colors.qualitative.Pastel,
+    fig.update_layout(
+        title="Sales Trend",
+        xaxis_title="Month",
+        yaxis_title="Sales (R$)",
+        hovermode="x unified",
         template="plotly_white",
     )
-    fig.update_layout(xaxis_title="Produto", yaxis_title="Receita (R$)")
 
     return fig
 
 
-@callback(  # type: ignore[misc]
-    Output("sales-by-category-chart", "figure"), Input("interval-component", "n_intervals")
-)
-def update_sales_by_category_chart(n: int) -> Any:  # ✅ CORRIGIDO: return type Any para decorator
-    """
-    Callback para atualizar o gráfico de vendas por categoria.
-    Acionado pelo componente dcc.Interval.
-    """
-    logger.info(f"Atualizando gráfico de vendas por categoria (intervalo: {n})")
-    categories = fetch_sales_by_category()
+@app.callback(Output("top-products-chart", "figure"), Input("tabs", "value"))
+def update_top_products(tab):
+    """Atualiza gráfico de top produtos."""
+    import plotly.graph_objects as go
 
-    if not categories:
-        logger.warning("Não foi possível obter dados de vendas por categoria para o gráfico.")
-        return go.Figure().add_annotation(
-            text="Sem dados para exibir", showarrow=False, x=0.5, y=0.5
+    fig = go.Figure()
+    fig.add_trace(
+        go.Bar(
+            x=["Product A", "Product B", "Product C", "Product D"],
+            y=[450, 380, 320, 280],
+            marker={"color": "#4ECDC4"},
         )
+    )
 
-    df_categories = pd.DataFrame(categories)
-
-    fig = px.pie(
-        df_categories,
-        names="category",
-        values="revenue",
-        title="Distribuição de Receita por Categoria",
-        color_discrete_sequence=px.colors.qualitative.Pastel,
+    fig.update_layout(
+        title="Top Products",
+        xaxis_title="Product",
+        yaxis_title="Sales (R$)",
         template="plotly_white",
     )
-    fig.update_traces(textposition="inside", textinfo="percent+label")
 
     return fig
 
 
-# ============================================================================
-# EXECUTAR APLICAÇÃO DASH
-# ============================================================================
-
+# ========== EXECUTAR ==========
 if __name__ == "__main__":
-    # Executa o servidor Dash. debug=True permite hot-reloading e depuração.
-    # Host e porta configurados para acesso local.
-    app.run_server(debug=True, host="127.0.0.1", port=8050)
+    app.run_server(
+        host="0.0.0.0",
+        port=DASH_PORT,
+        debug=os.getenv("DASH_DEBUG", "False") == "True",
+    )

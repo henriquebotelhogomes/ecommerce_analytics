@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  # ========== API FastAPI ==========
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ecommerce-api
+    ports:
+      - "8000:8080"
+    environment:
+      - GCP_PROJECT_ID=ecommerce-analytics-491215
+      - GCP_DATASET_ID=olist_ecommerce
+      - PORT=8080
+    volumes:
+      - ./src:/app/src
+    command: >
+      sh -c "uvicorn src.ecommerce_analytics.api.main:app 
+             --host 0.0.0.0 
+             --port 8080 
+             --reload"
+    networks:
+      - ecommerce-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # ========== Dashboard Plotly Dash ==========
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile.dash
+    container_name: ecommerce-dashboard
+    ports:
+      - "8050:8050"
+    environment:
+      - API_BASE_URL=http://api:8080
+      - DASH_PORT=8050
+      - DASH_DEBUG=False
+    volumes:
+      - ./src:/app/src
+    depends_on:
+      api:
+        condition: service_healthy
+    networks:
+      - ecommerce-network
+    command: >
+      sh -c "python src/ecommerce_analytics/dashboard/app.py"
+
+networks:
+  ecommerce-network:
+    driver: bridge

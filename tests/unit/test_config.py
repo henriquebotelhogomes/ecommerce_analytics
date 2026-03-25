@@ -1,49 +1,62 @@
 """
-Testes unitários para configurações
+Unit Tests - Configuration Module
+Testa carregamento e validação de configurações.
 """
 
-from ecommerce_analytics.core.config import Settings
+from ecommerce_analytics.core.config import settings
 
 
 class TestSettings:
-    """Testes para a classe Settings"""
+    """Testes para configurações da aplicação."""
 
-    def test_settings_default_values(self) -> None:
-        """Testa valores padrão"""
-        settings = Settings()
-
-        assert settings.gcp_project_id == "ecommerce-analytics-491215"
-        assert settings.gcp_dataset_id == "olist_ecommerce"
-        assert settings.app_version == "1.0.0"  # ✅ CORRIGIDO: app_version em vez de api_version
+    def test_settings_loaded(self):
+        """Testa se as configurações foram carregadas."""
+        assert settings is not None
         assert settings.app_name == "E-commerce Analytics API"
-        assert settings.log_level == "INFO"
 
-    def test_settings_custom_values(self) -> None:
-        """Testa valores customizados via variáveis de ambiente"""
-        import os
+    def test_settings_default_values(self):
+        """Testa valores padrão das configurações."""
+        assert settings.environment == "development"
+        assert settings.debug is True
+        assert settings.port == 8000
+        assert settings.host == "0.0.0.0"
 
-        # Salvar valores originais
-        original_project = os.environ.get("GCP_PROJECT_ID")
-        original_dataset = os.environ.get("GCP_DATASET_ID")
+    def test_settings_secret_key_exists(self):
+        """Testa se secret_key está configurada."""
+        assert settings.secret_key is not None
+        assert len(settings.secret_key) >= 32
 
-        try:
-            # Definir valores customizados
-            os.environ["GCP_PROJECT_ID"] = "custom-project"
-            os.environ["GCP_DATASET_ID"] = "custom-dataset"
+    def test_settings_cors_origins(self):
+        """Testa se CORS origins estão configurados."""
+        # cors_origins é armazenado como string no Settings
+        assert isinstance(settings.cors_origins, str)
+        assert len(settings.cors_origins) > 0
 
-            # Criar nova instância com valores customizados
-            settings = Settings()
+    def test_settings_cors_origins_list(self):
+        """Testa se cors_origins_list retorna uma lista válida."""
+        # cors_origins_list é a propriedade que converte para lista
+        cors_list = settings.cors_origins_list
+        assert isinstance(cors_list, list)
+        assert len(cors_list) > 0
+        assert "http://localhost" in cors_list
 
-            assert settings.gcp_project_id == "custom-project"
-            assert settings.gcp_dataset_id == "custom-dataset"
-        finally:
-            # Restaurar valores originais
-            if original_project:
-                os.environ["GCP_PROJECT_ID"] = original_project
-            else:
-                os.environ.pop("GCP_PROJECT_ID", None)
+    def test_settings_bigquery_config(self):
+        """Testa se configurações do BigQuery estão presentes."""
+        assert settings.gcp_project_id is not None
+        assert settings.gcp_dataset_id is not None
 
-            if original_dataset:
-                os.environ["GCP_DATASET_ID"] = original_dataset
-            else:
-                os.environ.pop("GCP_DATASET_ID", None)
+    def test_is_development(self):
+        """Testa se is_development() funciona."""
+        assert settings.is_development() is True
+
+    def test_is_production(self):
+        """Testa se is_production() funciona."""
+        assert settings.is_production() is False
+
+    def test_cors_origins_list_parsing(self):
+        """Testa se cors_origins_list faz parsing correto."""
+        cors_list = settings.cors_origins_list
+        # Verificar que não há strings vazias
+        assert all(origin for origin in cors_list)
+        # Verificar que todos começam com http
+        assert all(origin.startswith("http") for origin in cors_list)

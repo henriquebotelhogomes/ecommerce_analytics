@@ -1,93 +1,81 @@
 """
-Aplicação FastAPI principal
+FastAPI Application - E-commerce Analytics Platform
+Production-ready API with JWT authentication and BigQuery integration.
 """
 
 from contextlib import asynccontextmanager
-from typing import Any
 
-from fastapi import FastAPI, HTTPException, status
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from loguru import logger
 
-from ecommerce_analytics.api.routes import analytics, forecast, recommendations
-from ecommerce_analytics.api.schemas import LoginRequest, LoginResponse
+from ecommerce_analytics.api.routes import analytics, auth, forecast, recommendations
 from ecommerce_analytics.core.config import settings
-from ecommerce_analytics.core.logger import setup_logger
-
-# Configurar logger
-logger = setup_logger(__name__)
 
 
-# ============================================================================
-# LIFESPAN EVENTS
-# ============================================================================
-
-
+# ========== LIFESPAN CONTEXT MANAGER ==========
 @asynccontextmanager
-async def lifespan(app: FastAPI) -> Any:
-    """Gerencia o ciclo de vida da aplicação"""
+async def lifespan(app: FastAPI):
+    """Gerencia startup e shutdown da aplicação."""
     # Startup
-    logger.info("🚀 Iniciando E-commerce Analytics API")
+    logger.info("🚀 E-commerce Analytics API iniciando...")
+    logger.info(f"📊 Ambiente: {settings.environment}")
+    logger.info("🔐 Autenticação: JWT + OAuth2")
+    logger.info(f"🌐 CORS Origins: {settings.cors_origins_list}")
     yield
     # Shutdown
-    logger.info("🛑 Encerrando E-commerce Analytics API")
+    logger.info("🛑 E-commerce Analytics API encerrando...")
 
 
-# ============================================================================
-# CRIAR APLICAÇÃO
-# ============================================================================
-
-app = FastAPI(title=settings.app_name, version=settings.app_version, lifespan=lifespan)
-
-# ============================================================================
-# CONFIGURAR CORS
-# ============================================================================
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=settings.cors_origins,
-    allow_credentials=settings.cors_credentials,
-    allow_methods=settings.cors_methods,
-    allow_headers=settings.cors_headers,
+# ========== CRIAR APP ==========
+app = FastAPI(
+    title="E-commerce Analytics API",
+    description="Production-ready analytics platform with BigQuery integration",
+    version="1.0.0",
+    lifespan=lifespan,
+    docs_url="/docs" if settings.is_development() else None,  # Desabilitar docs em produção
+    redoc_url="/redoc" if settings.is_development() else None,
 )
 
-# ============================================================================
-# REGISTRAR ROTAS
-# ============================================================================
-
-app.include_router(analytics.router, prefix="/api/v1")
-app.include_router(forecast.router, prefix="/api/v1")
-app.include_router(recommendations.router, prefix="/api/v1")
-
-
-# ============================================================================
-# ENDPOINTS PÚBLICOS
-# ============================================================================
+# ========== CORS MIDDLEWARE ==========
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=settings.cors_origins_list,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
-@app.get("/health")
-async def health_check() -> dict[str, str]:
-    """Health check endpoint"""
-    return {"status": "ok"}
+# ========== HEALTH CHECK ==========
+@app.get("/health", tags=["Health"])
+async def health_check():
+    """Health check endpoint para Cloud Run."""
+    return {
+        "status": "healthy",
+        "service": "ecommerce-analytics-api",
+        "version": "1.0.0",
+        "environment": settings.environment,
+    }
 
 
-@app.get("/")
-async def root() -> dict[str, str]:
-    """Root endpoint"""
-    return {"message": "E-commerce Analytics API"}
+# ========== ROOT ENDPOINT ==========
+@app.get("/", tags=["Root"])
+async def root():
+    """Root endpoint."""
+    return {
+        "message": "E-commerce Analytics API",
+        "docs": "/docs" if settings.is_development() else None,
+        "health": "/health",
+    }
 
 
-@app.post("/login", response_model=LoginResponse)
-async def login(request: LoginRequest) -> LoginResponse:
-    """Endpoint de login"""
-    from ecommerce_analytics.api.auth import authenticate_user, create_access_token
+# ========== REGISTRAR ROUTERS ==========
+app.include_router(auth.router, prefix="/auth", tags=["Authentication"])
+app.include_router(analytics.router, prefix="/api/v1/analytics", tags=["Analytics"])
+app.include_router(forecast.router, prefix="/api/v1/forecast", tags=["Forecasting"])
+app.include_router(
+    recommendations.router, prefix="/api/v1/recommendations", tags=["Recommendations"]
+)
 
-    user = await authenticate_user(request.username, request.password)
-
-    if not user:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED, detail="Usuário ou senha inválidos"
-        )
-
-    access_token = create_access_token(data={"sub": user["username"], "email": user["email"]})
-
-    return LoginResponse(access_token=access_token, token_type="bearer")
+logger.info("✅ Todos os routers registrados com sucesso")

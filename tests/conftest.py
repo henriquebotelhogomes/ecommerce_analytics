@@ -1,21 +1,32 @@
 """
-Configuração global de fixtures para testes pytest
+Pytest Configuration and Fixtures
+Configuração centralizada para testes.
 """
 
 import pytest
-from ecommerce_analytics.api.main import app
 from fastapi.testclient import TestClient
 
+from ecommerce_analytics.api.main import app
 
-@pytest.fixture(scope="session")
-def fastapi_client() -> TestClient:
-    """Fixture que fornece um cliente de teste para a API FastAPI."""
+
+@pytest.fixture
+def client():
+    """Cria cliente de teste para a API."""
     return TestClient(app)
 
 
-@pytest.fixture(scope="session")
-def auth_token(fastapi_client: TestClient) -> str:
-    """Fixture que obtém um token de autenticação válido para os testes."""
-    response = fastapi_client.post("/login", json={"username": "admin", "password": "admin123"})
+@pytest.fixture
+def auth_token(client):
+    """Gera token de autenticação para testes."""
+    response = client.post("/auth/login", json={"username": "admin", "password": "admin123"})
+
     assert response.status_code == 200, f"Login falhou: {response.text}"
-    return response.json()["access_token"]
+
+    token = response.json()["access_token"]
+    return token
+
+
+@pytest.fixture
+def auth_headers(auth_token):
+    """Retorna headers com token de autenticação."""
+    return {"Authorization": f"Bearer {auth_token}"}

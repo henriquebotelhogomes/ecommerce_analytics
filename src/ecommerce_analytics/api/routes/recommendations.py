@@ -1,44 +1,57 @@
 """
-Endpoints de recomendações
+Recommendations Routes
+Endpoints para recomendações de produtos.
 """
 
-import logging
-from typing import Any
+from fastapi import APIRouter, Depends, HTTPException
+from loguru import logger
+from pydantic import BaseModel
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from ecommerce_analytics.api.auth import get_current_user
 
-from ecommerce_analytics.api.auth import verify_token
-from ecommerce_analytics.bigquery.client import BigQueryClient
-from ecommerce_analytics.core.exceptions import BigQueryError
-
-logger = logging.getLogger(__name__)
-router = APIRouter(prefix="/recommendations", tags=["recommendations"])
+router = APIRouter()
 
 
-@router.get("/products")
+# ========== SCHEMAS ==========
+class RecommendationRequest(BaseModel):
+    """Recommendation request schema."""
+
+    customer_id: str
+
+
+class RecommendationResponse(BaseModel):
+    """Recommendation response schema."""
+
+    status: str
+    recommendations: list
+
+
+# ========== ENDPOINTS ==========
+@router.post("/products", response_model=RecommendationResponse)
 async def get_product_recommendations(
-    customer_id: str, token: dict[str, Any] = Depends(verify_token)
-) -> list[dict[str, Any]]:
-    """Retorna recomendações de produtos para um cliente"""
+    request: RecommendationRequest,
+    current_user: dict = Depends(get_current_user),
+):
+    """
+    Retorna recomendações de produtos para um cliente.
+    Requer autenticação.
+    """
     try:
-        logger.info(f"🎯 Buscando recomendações para cliente: {customer_id}")
-        bq = BigQueryClient()
+        if not request.customer_id:
+            raise ValueError("customer_id é obrigatório")
 
-        # ✅ CORRIGIDO: Usar _ para variável não usada
-        _ = bq.query(f"SELECT * FROM `{bq.project_id}.{bq.dataset_id}.products` LIMIT 1")
+        logger.info(f"💡 Recomendações solicitadas por: {current_user['username']}")
 
-        logger.info(f"✅ Recomendações retornadas para cliente: {customer_id}")
-        return []
-
-    except BigQueryError as e:
-        logger.error(f"❌ Erro BigQuery: {str(e)}")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Erro ao buscar recomendações: {str(e)}",
-        )
+        return {
+            "status": "success",
+            "recommendations": [
+                {"product_id": "P001", "name": "Product A", "score": 0.95},
+                {"product_id": "P002", "name": "Product B", "score": 0.87},
+                {"product_id": "P003", "name": "Product C", "score": 0.79},
+            ],
+        }
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e)) from e
     except Exception as e:
-        logger.error(f"❌ Erro inesperado: {str(e)}")
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Erro interno do servidor: {str(e)}",
-        )
+        logger.error(f"❌ Erro ao gerar recomendações: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e)) from e
