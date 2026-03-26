@@ -2,6 +2,7 @@
 FastAPI Application - E-commerce Analytics Platform
 Production-ready API with JWT authentication and BigQuery integration.
 """
+
 import os
 from contextlib import asynccontextmanager
 
@@ -87,9 +88,4 @@ if __name__ == "__main__":
     port = int(os.getenv("PORT", 8080))
     host = os.getenv("HOST", "0.0.0.0")
 
-    uvicorn.run(
-        app,
-        host=host,
-        port=port,
-        log_level="info"
-    )
+    uvicorn.run(app, host=host, port=port, log_level="info")

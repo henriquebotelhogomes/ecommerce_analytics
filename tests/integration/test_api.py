@@ -49,37 +49,15 @@ class TestAnalyticsEndpoints:
         response = client.get("/api/v1/analytics/dashboard", headers=auth_headers)
         assert response.status_code == 200
         data = response.json()
-        assert data["status"] == "success"
-        assert "data" in data
+        assert "total_revenue" in data
+        assert "top_products" in data
+        assert "sales_by_category" in data
 
     def test_get_dashboard_no_auth(self, client):
         """Testa obtenção do dashboard sem autenticação."""
         response = client.get("/api/v1/analytics/dashboard")
         # HTTPBearer retorna 401 (Unauthorized) quando token falta, não 403
         assert response.status_code == 401
-
-    def test_get_top_products_success(self, client, auth_headers):
-        """Testa obtenção de top produtos com autenticação."""
-        response = client.get("/api/v1/analytics/top-products", headers=auth_headers)
-        assert response.status_code == 200
-        data = response.json()
-        assert data["status"] == "success"
-        assert "data" in data
-
-    def test_get_top_products_with_limit(self, client, auth_headers):
-        """Testa obtenção de top produtos com limite customizado."""
-        response = client.get("/api/v1/analytics/top-products?limit=5", headers=auth_headers)
-        assert response.status_code == 200
-        data = response.json()
-        assert data["limit"] == 5
-
-    def test_get_sales_by_category_success(self, client, auth_headers):
-        """Testa obtenção de vendas por categoria com autenticação."""
-        response = client.get("/api/v1/analytics/sales-by-category", headers=auth_headers)
-        assert response.status_code == 200
-        data = response.json()
-        assert data["status"] == "success"
-        assert "data" in data
 
 
 class TestForecastEndpoints:

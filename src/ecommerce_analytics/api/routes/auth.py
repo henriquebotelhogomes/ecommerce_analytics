@@ -3,15 +3,15 @@ Authentication Routes
 JWT token generation and user authentication.
 """
 
-from fastapi import APIRouter, HTTPException, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from loguru import logger
 from pydantic import BaseModel
 
 from ecommerce_analytics.api.auth import (
     create_access_token,
+    get_current_user,
     get_password_hash,
     verify_password,
-    get_current_user,
 )
 from ecommerce_analytics.core.exceptions import InvalidCredentialsError
 

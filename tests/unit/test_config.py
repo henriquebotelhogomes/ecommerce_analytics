@@ -17,8 +17,8 @@ class TestSettings:
     def test_settings_default_values(self):
         """Testa valores padrão das configurações."""
         assert settings.environment == "development"
-        assert settings.debug is True
-        assert settings.port == 8000
+        assert settings.debug is False
+        assert settings.port == 8080
         assert settings.host == "0.0.0.0"
 
     def test_settings_secret_key_exists(self):

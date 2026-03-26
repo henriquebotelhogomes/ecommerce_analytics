@@ -226,6 +226,17 @@ class BigQueryConnectionError(BigQueryError):
         )
 
 
+class BigQueryTimeoutError(BigQueryError):
+    """Erro de timeout em query do BigQuery."""
+
+    def __init__(self, message: str = "Timeout na query", details: Optional[dict[str, Any]] = None):
+        super().__init__(
+            message=message,
+            error_code="BQ_004",
+            details=details,
+        )
+
+
 class BigQueryQueryError(BigQueryError):
     """Erro ao executar query no BigQuery."""
 

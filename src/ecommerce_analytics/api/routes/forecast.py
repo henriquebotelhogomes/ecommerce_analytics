@@ -12,8 +12,10 @@ from ecommerce_analytics.services.forecast_service import ForecastService
 
 router = APIRouter()
 
+
 def get_forecast_service() -> ForecastService:
     return ForecastService()
+
 
 # ========== SCHEMAS ==========
 class ForecastRequest(BaseModel):
@@ -34,7 +36,7 @@ class ForecastResponse(BaseModel):
 def forecast_revenue(
     request: ForecastRequest,
     current_user: dict = Depends(get_current_user),
-    service: ForecastService = Depends(get_forecast_service)
+    service: ForecastService = Depends(get_forecast_service),
 ):
     """
     Prevê receita para os próximos meses via BigQuery Heuristics.

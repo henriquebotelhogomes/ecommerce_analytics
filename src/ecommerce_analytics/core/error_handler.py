@@ -10,9 +10,9 @@ from typing import Any
 from loguru import logger
 
 from ecommerce_analytics.core.exceptions import (
-    BigQueryConnectionException,
-    BigQueryQueryException,
-    BigQueryTimeoutException,
+    BigQueryConnectionError,
+    BigQueryQueryError,
+    BigQueryTimeoutError,
 )
 
 # ========== ERROR MASKING ==========
@@ -178,7 +178,7 @@ def handle_bigquery_error(func: Callable) -> Callable:
                 include_traceback=True,
             )
             # ✅ CORRIGIDO: Passar message e details como argumentos posicionais
-            raise BigQueryTimeoutException(
+            raise BigQueryTimeoutError(
                 f"BigQuery query timeout: {e!s}",
                 {"function": func.__name__},
             ) from e
@@ -190,10 +190,7 @@ def handle_bigquery_error(func: Callable) -> Callable:
                 include_traceback=True,
             )
             # ✅ CORRIGIDO: Passar message e details como argumentos posicionais
-            raise BigQueryConnectionException(
-                f"BigQuery connection failed: {e!s}",
-                {"function": func.__name__},
-            ) from e
+            raise BigQueryConnectionError(f"BigQuery connection failed: {e!s}") from e
 
         except Exception as e:
             error_type = type(e).__name__
@@ -204,9 +201,9 @@ def handle_bigquery_error(func: Callable) -> Callable:
                     context=f"BigQuery resource not found in {func.__name__}",
                     include_traceback=True,
                 )
-                raise BigQueryQueryException(
+                raise BigQueryQueryError(
                     f"BigQuery resource not found: {e!s}",
-                    {"function": func.__name__, "error_type": error_type},
+                    str(error_type),
                 ) from e
 
             elif "permission" in str(e).lower():
@@ -216,10 +213,7 @@ def handle_bigquery_error(func: Callable) -> Callable:
                     include_traceback=True,
                 )
                 # ✅ CORRIGIDO: Passar message e details como argumentos posicionais
-                raise BigQueryConnectionException(
-                    f"BigQuery permission denied: {e!s}",
-                    {"function": func.__name__, "error_type": error_type},
-                ) from e
+                raise BigQueryConnectionError(f"BigQuery permission denied: {e!s}") from e
 
             else:
                 safe_log_error(
@@ -227,9 +221,9 @@ def handle_bigquery_error(func: Callable) -> Callable:
                     context=f"BigQuery error in {func.__name__}",
                     include_traceback=True,
                 )
-                raise BigQueryQueryException(
+                raise BigQueryQueryError(
                     f"BigQuery query failed: {e!s}",
-                    {"function": func.__name__, "error_type": error_type},
+                    str(error_type),
                 ) from e
 
     return wrapper

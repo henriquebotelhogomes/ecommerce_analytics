@@ -12,8 +12,10 @@ from ecommerce_analytics.services.ml_service import RecommendationService
 
 router = APIRouter()
 
+
 def get_recommendation_service() -> RecommendationService:
     return RecommendationService()
+
 
 # ========== SCHEMAS ==========
 class RecommendationRequest(BaseModel):
@@ -34,7 +36,7 @@ class RecommendationResponse(BaseModel):
 def get_product_recommendations(
     request: RecommendationRequest,
     current_user: dict = Depends(get_current_user),
-    service: RecommendationService = Depends(get_recommendation_service)
+    service: RecommendationService = Depends(get_recommendation_service),
 ):
     """
     Retorna recomendações de produtos para um cliente usando SQL heurístico (BigQuery).
@@ -44,9 +46,13 @@ def get_product_recommendations(
         if not request.customer_id:
             raise ValueError("customer_id é obrigatório")
 
-        logger.info(f"💡 Recomendações solicitadas por: {current_user['username']} para o cliente {request.customer_id}")
+        logger.info(
+            f"💡 Recomendações solicitadas por: {current_user['username']} para o cliente {request.customer_id}"
+        )
 
-        recommendations = service.get_product_recommendations(customer_id=request.customer_id, limit=3)
+        recommendations = service.get_product_recommendations(
+            customer_id=request.customer_id, limit=3
+        )
 
         return {
             "status": "success",
