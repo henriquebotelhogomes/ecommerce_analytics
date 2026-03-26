@@ -8,9 +8,12 @@ from loguru import logger
 from pydantic import BaseModel
 
 from ecommerce_analytics.api.auth import get_current_user
+from ecommerce_analytics.services.forecast_service import ForecastService
 
 router = APIRouter()
 
+def get_forecast_service() -> ForecastService:
+    return ForecastService()
 
 # ========== SCHEMAS ==========
 class ForecastRequest(BaseModel):
@@ -28,12 +31,13 @@ class ForecastResponse(BaseModel):
 
 # ========== ENDPOINTS ==========
 @router.post("/revenue", response_model=ForecastResponse)
-async def forecast_revenue(
+def forecast_revenue(
     request: ForecastRequest,
     current_user: dict = Depends(get_current_user),
+    service: ForecastService = Depends(get_forecast_service)
 ):
     """
-    Prevê receita para os próximos meses.
+    Prevê receita para os próximos meses via BigQuery Heuristics.
     Requer autenticação.
     """
     try:
@@ -42,13 +46,11 @@ async def forecast_revenue(
 
         logger.info(f"🔮 Previsão de receita solicitada por: {current_user['username']}")
 
+        forecast_results = service.get_revenue_forecast(months_ahead=request.months_ahead)
+
         return {
             "status": "success",
-            "forecast": [
-                {"month": "Apr 2026", "predicted_revenue": 1250000},
-                {"month": "May 2026", "predicted_revenue": 1320000},
-                {"month": "Jun 2026", "predicted_revenue": 1400000},
-            ],
+            "forecast": forecast_results,
         }
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e)) from e

@@ -14,7 +14,7 @@ import requests
 from loguru import logger
 
 # ========== CONFIGURAÇÃO ==========
-API_BASE_URL = os.getenv("API_BASE_URL", "http://localhost:8000")
+API_BASE_URL = os.getenv("API_BASE_URL", "http://localhost:8080")
 DASH_HOST = os.getenv("DASH_HOST", "0.0.0.0")
 DASH_PORT = int(os.getenv("DASH_PORT", 8050))
 
@@ -47,7 +47,7 @@ app.layout = html.Div([
     # ========== AUTENTICAÇÃO ==========
     html.Div([
         html.Div([
-            html.Label("Username:", style={"fontWeight": "bold"}),
+            html.Label("Usuário:", style={"fontWeight": "bold"}),
             dcc.Input(
                 id="username-input",
                 type="text",
@@ -55,7 +55,7 @@ app.layout = html.Div([
                 value="admin",
                 style={"padding": "8px", "marginRight": "10px", "width": "150px"}
             ),
-            html.Label("Password:", style={"fontWeight": "bold", "marginLeft": "20px"}),
+            html.Label("Senha:", style={"fontWeight": "bold", "marginLeft": "20px"}),
             dcc.Input(
                 id="password-input",
                 type="password",
@@ -64,7 +64,7 @@ app.layout = html.Div([
                 style={"padding": "8px", "marginRight": "10px", "width": "150px"}
             ),
             html.Button(
-                "Login",
+                "Entrar",
                 id="login-button",
                 n_clicks=0,
                 style={
@@ -91,13 +91,13 @@ app.layout = html.Div([
     # ========== TABS ==========
     dcc.Tabs(id="tabs", value="tab-1", children=[
         # ========== TAB 1: OVERVIEW ==========
-        dcc.Tab(label="📈 Overview", value="tab-1", children=[
+        dcc.Tab(label="📈 Visão Geral", value="tab-1", children=[
             html.Div([
                 # Métricas principais
                 html.Div([
                     html.Div([
-                        html.H3("Total Revenue", style={"margin": "0 0 10px 0"}),
-                        html.H2(id="total-revenue", children="$0", style={"margin": "0", "color": "#1f77b4"}),
+                        html.H3("Receita Total", style={"margin": "0 0 10px 0"}),
+                        html.H2(id="total-revenue", children="R$ 0,00", style={"margin": "0", "color": "#1f77b4"}),
                     ], className="metric-card", style={
                         "padding": "20px",
                         "backgroundColor": "#f8f9fa",
@@ -105,7 +105,7 @@ app.layout = html.Div([
                         "border": "1px solid #ddd"
                     }),
                     html.Div([
-                        html.H3("Total Orders", style={"margin": "0 0 10px 0"}),
+                        html.H3("Total de Pedidos", style={"margin": "0 0 10px 0"}),
                         html.H2(id="total-orders", children="0", style={"margin": "0", "color": "#1f77b4"}),
                     ], className="metric-card", style={
                         "padding": "20px",
@@ -114,8 +114,8 @@ app.layout = html.Div([
                         "border": "1px solid #ddd"
                     }),
                     html.Div([
-                        html.H3("Avg Order Value", style={"margin": "0 0 10px 0"}),
-                        html.H2(id="avg-order-value", children="$0", style={"margin": "0", "color": "#1f77b4"}),
+                        html.H3("Ticket Médio", style={"margin": "0 0 10px 0"}),
+                        html.H2(id="avg-order-value", children="R$ 0,00", style={"margin": "0", "color": "#1f77b4"}),
                     ], className="metric-card", style={
                         "padding": "20px",
                         "backgroundColor": "#f8f9fa",
@@ -123,7 +123,7 @@ app.layout = html.Div([
                         "border": "1px solid #ddd"
                     }),
                     html.Div([
-                        html.H3("Total Customers", style={"margin": "0 0 10px 0"}),
+                        html.H3("Total de Clientes", style={"margin": "0 0 10px 0"}),
                         html.H2(id="total-customers", children="0", style={"margin": "0", "color": "#1f77b4"}),
                     ], className="metric-card", style={
                         "padding": "20px",
@@ -152,10 +152,10 @@ app.layout = html.Div([
         ]),
 
         # ========== TAB 2: TOP PRODUCTS ==========
-        dcc.Tab(label="🏆 Top Products", value="tab-2", children=[
+        dcc.Tab(label="🏆 Top Produtos", value="tab-2", children=[
             html.Div([
                 html.Div([
-                    html.Label("Limit:", style={"fontWeight": "bold"}),
+                    html.Label("Quantidade:", style={"fontWeight": "bold"}),
                     dcc.Slider(
                         id="top-products-limit",
                         min=5,
@@ -171,17 +171,17 @@ app.layout = html.Div([
         ]),
 
         # ========== TAB 3: SALES BY CATEGORY ==========
-        dcc.Tab(label="📊 Sales by Category", value="tab-3", children=[
+        dcc.Tab(label="📊 Vendas por Categoria", value="tab-3", children=[
             html.Div([
                 dcc.Graph(id="sales-by-category-graph"),
             ], style={"padding": "20px"})
         ]),
 
         # ========== TAB 4: FORECASTING ==========
-        dcc.Tab(label="🔮 Forecasting", value="tab-4", children=[
+        dcc.Tab(label="🔮 Previsões", value="tab-4", children=[
             html.Div([
                 html.Div([
-                    html.Label("Months Ahead:", style={"fontWeight": "bold"}),
+                    html.Label("Meses à frente:", style={"fontWeight": "bold"}),
                     dcc.Slider(
                         id="forecast-months",
                         min=1,
@@ -197,10 +197,10 @@ app.layout = html.Div([
         ]),
 
         # ========== TAB 5: RECOMMENDATIONS ==========
-        dcc.Tab(label="💡 Recommendations", value="tab-5", children=[
+        dcc.Tab(label="💡 Recomendações", value="tab-5", children=[
             html.Div([
                 html.Div([
-                    html.Label("Customer ID:", style={"fontWeight": "bold"}),
+                    html.Label("ID do Cliente:", style={"fontWeight": "bold"}),
                     dcc.Input(
                         id="customer-id-input",
                         type="text",
@@ -231,7 +231,7 @@ app.layout = html.Div([
     # ========== INTERVAL PARA ATUALIZAR DADOS ==========
     dcc.Interval(
         id="interval-component",
-        interval=30000,  # 30 segundos
+        interval=300000,  # 5 minutos
         n_intervals=0
     ),
 ], style={"fontFamily": "Arial, sans-serif", "backgroundColor": "#fff"})
@@ -253,7 +253,7 @@ def login(n_clicks, username, password):
         response = requests.post(
             f"{API_BASE_URL}/auth/login",
             json={"username": username, "password": password},
-            timeout=5
+            timeout=30
         )
 
         if response.status_code == 200:
@@ -281,7 +281,7 @@ def fetch_dashboard_data(n_intervals, token):
         response = requests.get(
             f"{API_BASE_URL}/api/v1/analytics/dashboard",
             headers=headers,
-            timeout=5
+            timeout=30
         )
 
         if response.status_code == 200:
@@ -310,7 +310,7 @@ def update_overview(data):
     """Atualizar overview com dados do dashboard."""
     if not data:
         empty_fig = go.Figure()
-        return "$0", "0", "$0", "0", empty_fig, empty_fig
+        return "R$ 0,00", "0", "R$ 0,00", "0", empty_fig, empty_fig
 
     # Extrair dados
     total_revenue = data.get("total_revenue", 0)
@@ -319,10 +319,10 @@ def update_overview(data):
     total_customers = data.get("total_customers", 0)
 
     # Formatar valores
-    revenue_text = f"${total_revenue:,.2f}"
-    orders_text = f"{total_orders:,}"
-    avg_text = f"${avg_order_value:,.2f}"
-    customers_text = f"{total_customers:,}"
+    revenue_text = f"R$ {total_revenue:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+    orders_text = f"{total_orders:,}".replace(",", ".")
+    avg_text = f"R$ {avg_order_value:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+    customers_text = f"{total_customers:,}".replace(",", ".")
 
     # Gráfico de tendência de receita
     revenue_fig = go.Figure()
@@ -335,9 +335,9 @@ def update_overview(data):
         marker=dict(size=8)
     ))
     revenue_fig.update_layout(
-        title="Revenue Trend",
-        xaxis_title="Month",
-        yaxis_title="Revenue ($)",
+        title="Evolução da Receita",
+        xaxis_title="Mês",
+        yaxis_title="Receita (R$)",
         hovermode="x unified",
         template="plotly_white"
     )
@@ -353,9 +353,9 @@ def update_overview(data):
         marker=dict(size=8)
     ))
     orders_fig.update_layout(
-        title="Orders Trend",
-        xaxis_title="Month",
-        yaxis_title="Number of Orders",
+        title="Evolução de Pedidos",
+        xaxis_title="Mês",
+        yaxis_title="Quantidade de Pedidos",
         hovermode="x unified",
         template="plotly_white"
     )
@@ -383,13 +383,13 @@ def update_top_products(data, limit):
     fig.add_trace(go.Bar(
         x=product_names,
         y=product_sales,
-        name="Sales",
+        name="Vendas",
         marker=dict(color="#1f77b4")
     ))
     fig.update_layout(
-        title=f"Top {limit} Products",
-        xaxis_title="Product",
-        yaxis_title="Sales",
+        title=f"Top {limit} Produtos",
+        xaxis_title="Produto",
+        yaxis_title="Vendas",
         hovermode="x unified",
         template="plotly_white"
     )
@@ -416,10 +416,10 @@ def update_sales_by_category(data):
     fig.add_trace(go.Pie(
         labels=category_names,
         values=category_sales,
-        name="Sales"
+        name="Vendas"
     ))
     fig.update_layout(
-        title="Sales by Category",
+        title="Vendas por Categoria",
         template="plotly_white"
     )
     return fig
@@ -439,26 +439,28 @@ def update_forecast(data, months, token):
             f"{API_BASE_URL}/api/v1/forecast/revenue",
             json={"months_ahead": months},
             headers=headers,
-            timeout=5
+            timeout=30
         )
 
         if response.status_code == 200:
             forecast_data = response.json()
             forecast_values = forecast_data.get("forecast", [])
+            x_vals = [f.get("month", f"M{i}") for i, f in enumerate(forecast_values)]
+            y_vals = [f.get("predicted_revenue", 0) for f in forecast_values]
 
             fig = go.Figure()
             fig.add_trace(go.Scatter(
-                x=list(range(1, len(forecast_values) + 1)),
-                y=forecast_values,
+                x=x_vals,
+                y=y_vals,
                 mode="lines+markers",
                 name="Forecast",
                 line=dict(color="#2ca02c", width=3),
                 marker=dict(size=8)
             ))
             fig.update_layout(
-                title=f"Revenue Forecast - {months} Months",
-                xaxis_title="Month",
-                yaxis_title="Revenue ($)",
+                title=f"Previsão de Receita - {months} Meses",
+                xaxis_title="Mês",
+                yaxis_title="Receita (R$)",
                 hovermode="x unified",
                 template="plotly_white"
             )
@@ -483,7 +485,7 @@ def update_recommendations(customer_id, top_n, token):
             f"{API_BASE_URL}/api/v1/recommendations/products",
             json={"customer_id": customer_id, "top_n": top_n},
             headers=headers,
-            timeout=5
+            timeout=30
         )
 
         if response.status_code == 200:
@@ -493,20 +495,20 @@ def update_recommendations(customer_id, top_n, token):
             if not recommendations:
                 return go.Figure()
 
-            product_names = [r.get("product_name", "Unknown") for r in recommendations]
+            product_names = [r.get("name", "Unknown") for r in recommendations]
             scores = [r.get("score", 0) for r in recommendations]
 
             fig = go.Figure()
             fig.add_trace(go.Bar(
                 x=product_names,
                 y=scores,
-                name="Score",
-                marker=dict(color="#d62728")
+                name="Relevância",
+                marker=dict(color="#1f77b4")
             ))
             fig.update_layout(
-                title=f"Recommendations for {customer_id}",
-                xaxis_title="Product",
-                yaxis_title="Score",
+                title=f"Recomendações para {customer_id}",
+                xaxis_title="Produto",
+                yaxis_title="Relevância",
                 hovermode="x unified",
                 template="plotly_white"
             )

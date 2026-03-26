@@ -39,24 +39,25 @@ def create_optimized_tables():
 
     # 2. Materialized View para vendas diárias
     daily_sales_query = f"""
-    CREATE OR REPLACE MATERIALIZED VIEW `{settings.gcp_project_id}.{settings.gcp_dataset_id}.daily_sales` AS
+    CREATE OR REPLACE TABLE `{settings.gcp_project_id}.{settings.gcp_dataset_id}.daily_sales` AS
     SELECT
       DATE(o.order_purchase_timestamp) as sale_date,
       COUNT(DISTINCT o.order_id) as total_orders,
-      COUNT(DISTINCT o.customer_id) as unique_customers,
-      SUM(oi.price * oi.quantity) as total_revenue,
-      AVG(oi.price * oi.quantity) as avg_order_value,
+      COUNT(DISTINCT c.customer_unique_id) as unique_customers,
+      SUM(oi.price) as total_revenue,
+      AVG(oi.price) as avg_order_value,
       COUNT(DISTINCT p.product_category_name) as categories_sold
     FROM `{settings.gcp_project_id}.{settings.gcp_dataset_id}.orders_optimized` o
     LEFT JOIN `{settings.gcp_project_id}.{settings.gcp_dataset_id}.order_items` oi ON o.order_id = oi.order_id
     LEFT JOIN `{settings.gcp_project_id}.{settings.gcp_dataset_id}.products` p ON oi.product_id = p.product_id
+    LEFT JOIN `{settings.gcp_project_id}.{settings.gcp_dataset_id}.customers` c ON o.customer_id = c.customer_id
     GROUP BY sale_date
     ORDER BY sale_date DESC
     """
 
-    print("📊 Criando materialized view daily_sales...")
+    print("📊 Criando table daily_sales...")
     client.query(daily_sales_query).result()
-    print("✅ Materialized view daily_sales criada!")
+    print("✅ Table daily_sales criada!")
 
 
 if __name__ == "__main__":

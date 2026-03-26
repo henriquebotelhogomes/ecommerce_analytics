@@ -3,7 +3,7 @@ Authentication Routes
 JWT token generation and user authentication.
 """
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends
 from loguru import logger
 from pydantic import BaseModel
 
@@ -11,6 +11,7 @@ from ecommerce_analytics.api.auth import (
     create_access_token,
     get_password_hash,
     verify_password,
+    get_current_user,
 )
 from ecommerce_analytics.core.exceptions import InvalidCredentialsError
 
@@ -46,7 +47,7 @@ DEMO_USERS = {
 
 # ========== ENDPOINTS ==========
 @router.post("/login", response_model=TokenResponse, tags=["Authentication"])
-async def login(credentials: LoginRequest) -> TokenResponse:
+def login(credentials: LoginRequest) -> TokenResponse:
     """
     Login endpoint - Gera JWT token.
 
@@ -91,6 +92,6 @@ async def login(credentials: LoginRequest) -> TokenResponse:
 
 
 @router.get("/me", tags=["Authentication"])
-async def get_current_user(current_user: dict) -> dict:
+async def read_users_me(current_user: dict = Depends(get_current_user)) -> dict:
     """Retorna informações do usuário autenticado."""
     return current_user

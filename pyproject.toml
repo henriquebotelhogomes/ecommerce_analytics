@@ -42,6 +42,7 @@ dependencies = [
     "pydantic-settings>=2.0.0",
     "google-cloud-bigquery>=3.13.0",
     "google-cloud-bigquery-storage>=2.21.0",
+    "db-dtypes>=1.1.0",
     "plotly>=5.17.0",
     "pandas>=2.1.0",
     "numpy>=1.24.0",

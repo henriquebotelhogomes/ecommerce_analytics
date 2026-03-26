@@ -1,0 +1,866 @@
+2026-03-26 11:52:31.540 | INFO     | __main__:<module>:728 - 🎨 Dashboard iniciando...
+2026-03-26 11:52:31.541 | INFO     | __main__:<module>:729 - 📡 API Base URL: http://localhost:8080
+2026-03-26 11:53:13.899 | INFO     | __main__:<module>:728 - 🎨 Dashboard iniciando...
+2026-03-26 11:53:13.899 | INFO     | __main__:<module>:729 - 📡 API Base URL: http://localhost:8080
+2026-03-26 11:53:15.506 | INFO     | __main__:<module>:728 - 🎨 Dashboard iniciando...
+2026-03-26 11:53:15.507 | INFO     | __main__:<module>:729 - 📡 API Base URL: http://localhost:8080
+2026-03-26 11:53:17.115 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:53:17.219 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:53:17.260 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:53:17.424 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:53:17.579 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:53:17.579 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:53:23.124 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:53:23.127 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:53:23.453 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:53:23.454 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:53:23.454 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:53:23.701 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:53:23.748 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:53:23.763 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:53:27.745 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:53:28.051 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:53:28.069 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:53:28.070 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:53:28.070 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:53:28.384 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:53:28.385 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:53:28.385 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:53:32.756 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:53:33.061 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:53:33.076 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:53:33.077 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:53:33.078 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:53:33.377 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:53:33.383 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:53:33.388 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:53:37.756 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:53:38.063 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:53:38.077 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:53:38.078 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:53:38.079 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:53:38.392 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:53:38.394 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:53:38.395 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:53:42.759 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:53:43.075 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:53:43.077 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:53:43.078 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:53:43.079 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:53:43.404 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:53:43.405 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:53:43.405 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:53:49.054 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:53:49.057 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:53:49.385 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:53:49.387 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:53:49.388 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:53:49.390 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:53:49.695 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:53:49.697 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:54:10.737 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:54:11.061 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:54:11.061 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:54:11.061 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:54:11.064 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:54:11.390 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:54:11.390 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:54:11.392 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:54:13.743 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:54:14.055 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:54:14.061 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:54:14.063 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:54:14.064 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:54:14.383 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:54:14.384 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:54:14.390 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:54:25.624 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:54:25.939 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:54:25.944 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:54:25.950 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:54:27.128 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:54:27.473 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:54:27.475 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:54:27.475 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:54:30.224 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:54:30.231 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:54:30.231 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:54:35.220 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:54:35.532 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:54:35.533 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:54:35.541 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:54:39.933 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:54:40.253 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:54:40.255 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:54:40.266 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:54:42.369 | INFO     | __main__:handle_auth:439 - ✅ Login bem-sucedido para admin
+2026-03-26 11:54:47.166 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:54:49.516 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:54:49.516 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:54:53.468 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:54:53.469 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:54:55.868 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:54:55.873 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:54:55.874 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:54:56.986 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:54:59.331 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:54:59.334 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:54:59.335 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:02.323 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:04.699 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:55:04.700 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:04.700 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:07.343 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:09.691 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:55:09.692 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:09.692 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:10.745 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:55:11.060 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:55:11.062 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:55:11.068 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:55:12.298 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:13.739 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:55:14.065 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:55:14.358 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:55:14.372 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:55:14.671 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:14.677 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:55:14.678 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:17.281 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:19.652 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:19.652 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:19.670 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:55:21.979 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:24.353 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:24.354 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:24.357 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:55:27.290 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:29.640 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:55:29.641 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:29.641 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:34.075 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:36.464 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:55:36.475 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:36.475 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:38.854 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:41.226 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:41.229 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:55:41.229 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:43.332 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:45.671 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:45.688 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:55:45.689 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:48.144 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:50.493 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:55:50.493 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:50.494 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:54.089 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:56.467 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:56.471 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:55:56.471 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:55:58.544 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:00.911 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:56:00.911 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:00.913 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:03.292 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:05.675 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:56:05.675 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:05.677 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:08.177 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:10.567 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:10.567 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:10.572 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:56:11.054 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:56:11.381 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:56:11.382 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:56:11.383 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:56:13.794 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:14.062 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:56:14.392 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:56:14.436 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:56:14.703 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:56:16.156 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:56:16.165 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:16.165 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:18.579 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:20.918 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:56:20.918 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:20.930 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:23.328 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:25.693 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:25.698 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:56:25.699 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:29.792 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:32.168 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:56:32.180 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:32.183 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:35.776 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:38.166 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:40.567 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:56:40.568 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:40.568 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:44.097 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:46.505 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:56:46.505 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:46.517 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:50.104 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:52.492 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:52.497 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:52.499 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:56:55.820 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:56:58.194 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:00.537 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:00.558 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:57:00.582 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:03.795 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:06.160 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:06.177 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:06.181 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:57:10.104 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:10.740 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:57:11.064 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:57:11.361 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:57:11.369 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:57:12.454 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:12.455 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:12.471 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:57:14.053 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:57:14.377 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:57:14.378 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:57:14.379 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:57:15.803 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:18.179 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:20.543 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:20.547 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:57:20.547 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:24.105 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:26.475 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:57:26.476 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:26.477 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:30.092 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:32.437 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:32.437 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:32.474 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:57:36.121 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:38.519 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:40.897 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:57:40.898 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:40.898 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:44.790 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:47.130 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:47.137 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:57:47.137 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:50.800 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:53.174 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:55.543 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:55.558 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:57:55.578 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:57:59.083 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:01.443 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:01.461 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:58:01.461 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:04.783 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:07.149 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:58:07.150 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:07.150 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:11.046 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:58:11.117 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:11.367 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:58:11.368 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:58:11.370 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:58:13.486 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:14.043 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:58:14.359 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:58:14.367 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:58:14.613 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:58:15.843 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:15.843 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:15.884 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:58:19.804 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:22.171 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:22.178 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:58:22.189 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:26.079 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:28.170 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:30.517 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:30.521 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:58:30.530 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:34.122 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:36.483 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:36.483 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:36.483 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:58:40.084 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:42.468 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:42.471 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:58:42.472 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:46.101 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:48.471 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:50.840 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:50.843 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:50.846 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:58:52.261 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:54.635 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:54.639 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:58:54.640 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:58:59.109 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:01.498 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:59:01.500 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:01.510 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:03.906 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:06.257 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:06.260 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:06.263 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:59:08.684 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:11.057 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:59:11.070 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:11.070 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:11.083 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:59:11.408 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:59:11.409 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:59:11.413 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:59:13.557 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:14.055 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 11:59:14.378 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 11:59:14.382 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 11:59:14.688 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 11:59:15.940 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:59:15.941 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:15.941 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:18.334 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:20.707 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:20.708 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:20.724 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:59:23.219 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:25.597 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:25.597 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:25.603 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:59:29.092 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:31.470 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:59:31.470 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:31.471 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:33.919 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:36.304 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:59:36.305 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:36.305 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:38.679 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:41.071 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:59:41.072 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:41.082 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:43.475 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:45.850 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:45.851 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:45.855 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:59:48.271 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:50.618 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:59:50.632 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:50.632 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:54.109 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:56.470 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 11:59:56.471 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 11:59:56.484 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:00.080 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:02.448 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:02.449 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:02.452 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:00:06.076 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:08.446 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:10.798 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:00:10.798 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:10.798 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:11.059 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:00:11.385 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:00:11.386 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:00:11.396 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:00:13.750 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:00:14.075 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:00:14.076 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:00:14.088 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:00:15.120 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:17.492 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:17.492 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:17.498 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:00:20.810 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:23.181 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:25.533 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:25.540 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:00:25.541 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:29.089 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:31.459 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:31.462 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:00:31.474 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:35.084 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:37.445 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:37.445 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:37.452 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:00:41.092 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:43.142 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:45.507 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:00:45.508 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:45.509 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:49.070 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:51.434 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:00:51.434 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:51.435 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:55.091 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:57.450 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:00:57.468 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:00:57.468 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:01.108 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:03.497 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:05.864 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:01:05.877 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:05.879 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:09.769 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:11.055 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:01:11.387 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:01:11.388 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:01:11.699 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:01:12.137 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:12.146 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:01:12.155 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:14.060 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:01:14.391 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:01:14.393 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:01:14.399 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:01:15.772 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:18.115 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:20.471 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:20.471 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:20.476 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:01:24.080 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:26.444 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:26.445 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:26.463 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:01:30.099 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:32.451 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:01:32.451 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:32.452 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:36.115 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:38.443 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:40.811 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:01:40.812 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:40.813 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:44.785 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:47.142 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:47.147 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:01:47.157 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:50.793 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:53.164 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:55.520 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:55.539 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:01:55.553 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:01:59.090 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:01.463 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:02:01.464 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:01.465 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:04.801 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:07.170 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:07.171 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:07.186 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:02:11.057 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:02:11.104 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:11.387 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:02:11.388 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:02:11.390 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:02:13.489 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:14.057 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:02:14.388 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:02:14.389 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:02:14.701 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:02:15.836 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:02:15.837 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:15.849 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:19.785 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:22.147 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:02:22.147 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:22.162 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:26.101 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:28.164 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:30.518 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:30.522 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:02:30.522 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:34.072 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:36.413 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:02:36.413 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:36.414 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:36.956 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:39.326 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:39.327 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:39.333 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:02:44.103 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:46.467 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:46.472 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:02:46.481 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:48.852 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:51.228 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:51.229 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:51.261 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:02:53.639 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:56.001 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:56.019 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:02:56.031 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:02:58.393 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:00.752 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:00.752 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:03:00.752 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:03.139 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:05.513 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:03:05.517 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:05.518 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:09.089 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:11.056 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:03:11.390 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:03:11.393 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:03:11.438 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:03:11.438 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:11.439 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:11.701 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:03:13.881 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:14.056 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:03:14.388 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:03:14.511 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:03:14.702 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:03:16.237 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:16.246 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:03:16.246 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:18.636 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:21.004 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:03:21.005 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:21.005 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:23.396 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:25.745 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:03:25.746 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:25.746 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:28.170 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:30.530 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:30.532 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:03:30.535 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:34.133 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:36.492 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:36.496 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:03:36.506 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:40.116 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:42.475 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:03:42.487 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:42.488 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:46.079 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:48.459 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:50.811 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:03:50.813 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:50.813 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:54.788 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:57.165 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:03:57.167 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:03:57.167 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:01.088 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:03.458 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:05.807 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:05.810 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:04:05.811 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:09.763 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:11.062 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:04:11.395 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:04:11.396 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:04:11.703 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:04:12.112 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:12.113 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:12.129 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:04:14.054 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:04:14.383 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:04:14.384 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:04:14.385 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:04:15.661 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:17.648 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:19.051 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:04:19.382 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:04:19.383 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:04:19.693 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:04:20.021 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:20.022 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:20.039 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:04:22.284 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:24.060 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:04:24.389 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:04:24.392 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:04:24.642 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:04:24.642 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:24.644 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:24.701 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:04:27.291 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:28.746 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:04:29.073 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:04:29.366 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:04:29.381 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:04:29.662 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:29.664 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:04:29.677 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:32.290 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:33.738 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:04:34.066 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:04:34.068 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:04:34.375 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:04:34.657 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:34.658 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:34.666 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:04:39.066 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:04:39.126 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:39.395 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:04:39.398 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:04:39.405 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:04:41.488 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:41.739 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:41.743 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:04:43.851 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:44.302 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:04:44.644 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:04:44.646 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:04:44.954 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:04:46.366 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:04:46.372 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:46.373 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:48.955 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:49.047 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:04:49.373 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:04:49.592 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:04:49.688 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:04:51.340 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:51.343 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:04:51.344 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:52.694 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:04:53.057 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:04:53.060 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:04:53.065 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:04:53.740 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:56.126 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:04:56.126 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:56.127 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:58.753 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:04:58.766 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:04:59.066 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:04:59.072 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:04:59.074 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:05:01.403 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:01.407 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:05:01.411 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:03.820 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:04.055 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:05:04.382 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:05:04.459 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:05:04.693 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:05:06.362 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:05:06.380 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:06.384 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:09.054 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:05:09.374 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:05:09.382 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:05:09.385 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:05:09.754 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:12.137 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:05:12.138 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:12.152 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:14.050 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:05:14.111 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:14.379 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:05:14.380 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:05:14.382 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:05:16.476 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:16.713 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:05:16.713 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:18.873 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:19.060 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:05:19.395 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:05:19.501 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:05:19.704 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:05:21.208 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:21.212 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:05:21.223 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:23.601 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:24.057 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:05:24.386 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:05:24.388 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:05:24.696 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:05:25.972 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:05:25.972 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:25.984 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:28.425 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:29.004 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:05:29.333 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:05:29.362 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:05:29.363 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:05:30.784 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:30.798 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:30.802 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:05:33.174 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:33.751 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:05:34.063 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:05:34.064 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:05:34.359 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:05:35.523 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:05:35.524 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:35.524 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:38.781 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:39.046 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:05:39.376 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:05:39.407 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:05:39.690 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:05:41.116 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:41.120 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:05:41.131 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:43.480 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:44.058 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:05:44.389 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:05:44.390 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:05:44.725 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:05:45.851 | ERROR    | __main__:update_top_products:627 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:45.854 | ERROR    | __main__:update_sales_forecast:722 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:05:45.854 | ERROR    | __main__:update_sales_by_category:573 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:48.050 | WARNING  | __main__:fetch_dashboard_data:471 - ⚠️  Token não encontrado
+2026-03-26 12:05:48.331 | ERROR    | __main__:fetch_dashboard_data:487 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:05:48.378 | WARNING  | __main__:update_sales_by_category:546 - ⚠️  Token não encontrado
+2026-03-26 12:05:48.379 | WARNING  | __main__:update_top_products:599 - ⚠️  Token não encontrado
+2026-03-26 12:05:48.379 | WARNING  | __main__:update_sales_forecast:653 - ⚠️  Token não encontrado
+2026-03-26 12:05:52.302 | INFO     | __main__:<module>:813 - 🎨 Dashboard iniciando...
+2026-03-26 12:05:52.302 | INFO     | __main__:<module>:814 - 📡 API Base URL: http://localhost:8080
+2026-03-26 12:05:53.802 | WARNING  | __main__:update_sales_by_category:631 - ⚠️  Token não encontrado
+2026-03-26 12:05:53.868 | WARNING  | __main__:update_top_products:684 - ⚠️  Token não encontrado
+2026-03-26 12:05:53.870 | WARNING  | __main__:update_sales_forecast:738 - ⚠️  Token não encontrado
+2026-03-26 12:05:54.284 | WARNING  | __main__:update_sales_by_category:631 - ⚠️  Token não encontrado
+2026-03-26 12:05:54.285 | WARNING  | __main__:update_top_products:684 - ⚠️  Token não encontrado
+2026-03-26 12:05:54.286 | WARNING  | __main__:update_sales_forecast:738 - ⚠️  Token não encontrado
+2026-03-26 12:06:04.367 | INFO     | __main__:handle_auth:490 - ✅ Login bem-sucedido para admin
+2026-03-26 12:06:11.420 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:06:18.709 | ERROR    | __main__:update_sales_forecast:807 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:06:18.711 | ERROR    | __main__:update_sales_by_category:658 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:06:18.719 | ERROR    | __main__:update_top_products:712 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:06:18.720 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:06:21.215 | ERROR    | __main__:update_sales_by_category:658 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:06:21.217 | ERROR    | __main__:update_sales_forecast:807 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:06:21.226 | ERROR    | __main__:update_top_products:712 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:06:22.098 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:38:56.149 | INFO     | __main__:<module>:813 - 🎨 Dashboard iniciando...
+2026-03-26 12:38:56.150 | INFO     | __main__:<module>:814 - 📡 API Base URL: http://localhost:8080
+2026-03-26 12:38:56.992 | INFO     | __main__:<module>:813 - 🎨 Dashboard iniciando...
+2026-03-26 12:38:56.992 | INFO     | __main__:<module>:814 - 📡 API Base URL: http://localhost:8080
+2026-03-26 12:38:57.863 | WARNING  | __main__:update_top_products:684 - ⚠️  Token não encontrado
+2026-03-26 12:38:57.864 | WARNING  | __main__:update_sales_by_category:631 - ⚠️  Token não encontrado
+2026-03-26 12:38:57.865 | WARNING  | __main__:update_sales_forecast:738 - ⚠️  Token não encontrado
+2026-03-26 12:39:06.369 | INFO     | __main__:handle_auth:490 - ✅ Login bem-sucedido para admin
+2026-03-26 12:39:10.673 | WARNING  | __main__:update_sales_by_category:631 - ⚠️  Token não encontrado
+2026-03-26 12:39:10.682 | WARNING  | __main__:update_top_products:684 - ⚠️  Token não encontrado
+2026-03-26 12:39:10.684 | WARNING  | __main__:update_sales_forecast:738 - ⚠️  Token não encontrado
+2026-03-26 12:39:13.749 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:20.320 | ERROR    | __main__:update_sales_forecast:807 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:39:20.320 | ERROR    | __main__:update_sales_by_category:658 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:20.323 | ERROR    | __main__:update_top_products:712 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:20.325 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:22.745 | ERROR    | __main__:update_sales_forecast:807 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:39:22.746 | ERROR    | __main__:update_sales_by_category:658 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:22.758 | ERROR    | __main__:update_top_products:712 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:24.146 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:26.557 | ERROR    | __main__:update_sales_forecast:807 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:39:26.557 | ERROR    | __main__:update_sales_by_category:658 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:26.558 | ERROR    | __main__:update_top_products:712 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:29.096 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:31.463 | ERROR    | __main__:update_sales_by_category:658 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:31.464 | ERROR    | __main__:update_top_products:712 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:31.469 | ERROR    | __main__:update_sales_forecast:807 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:39:34.154 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:36.542 | ERROR    | __main__:update_sales_by_category:658 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:36.543 | ERROR    | __main__:update_top_products:712 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:36.559 | ERROR    | __main__:update_sales_forecast:807 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:39:40.109 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:42.494 | ERROR    | __main__:update_sales_by_category:658 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:42.498 | ERROR    | __main__:update_sales_forecast:807 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:39:42.499 | ERROR    | __main__:update_top_products:712 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:44.915 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:47.271 | ERROR    | __main__:update_sales_by_category:658 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:47.289 | ERROR    | __main__:update_sales_forecast:807 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:39:47.289 | ERROR    | __main__:update_top_products:712 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:49.363 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:51.716 | ERROR    | __main__:update_sales_by_category:658 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:51.720 | ERROR    | __main__:update_sales_forecast:807 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:39:51.720 | ERROR    | __main__:update_top_products:712 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:54.178 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:56.538 | ERROR    | __main__:update_sales_by_category:658 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:39:56.542 | ERROR    | __main__:update_sales_forecast:807 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:39:56.542 | ERROR    | __main__:update_top_products:712 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:00.116 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:02.491 | ERROR    | __main__:update_top_products:712 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:02.491 | ERROR    | __main__:update_sales_by_category:658 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:02.498 | ERROR    | __main__:update_sales_forecast:807 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:40:04.574 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:06.952 | ERROR    | __main__:update_sales_by_category:658 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:06.954 | ERROR    | __main__:update_sales_forecast:807 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:40:06.955 | ERROR    | __main__:update_top_products:712 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:09.342 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:11.717 | ERROR    | __main__:update_sales_by_category:658 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:11.718 | ERROR    | __main__:update_top_products:712 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:11.722 | ERROR    | __main__:update_sales_forecast:807 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:40:14.176 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:16.536 | ERROR    | __main__:update_sales_by_category:658 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:16.539 | ERROR    | __main__:update_sales_forecast:807 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:40:16.567 | ERROR    | __main__:update_top_products:712 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:20.117 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:22.490 | ERROR    | __main__:update_top_products:712 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:22.491 | ERROR    | __main__:update_sales_by_category:658 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:22.499 | ERROR    | __main__:update_sales_forecast:807 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:40:26.180 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:28.562 | ERROR    | __main__:update_sales_forecast:807 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:40:28.563 | ERROR    | __main__:update_top_products:712 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:28.576 | ERROR    | __main__:update_sales_by_category:658 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:31.816 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:34.215 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:36.614 | ERROR    | __main__:update_sales_forecast:807 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:40:36.617 | ERROR    | __main__:update_sales_by_category:658 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:36.619 | ERROR    | __main__:update_top_products:712 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:39.780 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:42.163 | ERROR    | __main__:update_sales_by_category:658 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:42.166 | ERROR    | __main__:update_sales_forecast:807 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:40:42.179 | ERROR    | __main__:update_top_products:712 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:46.113 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:48.478 | ERROR    | __main__:update_top_products:712 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:48.478 | ERROR    | __main__:update_sales_by_category:658 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:48.484 | ERROR    | __main__:update_sales_forecast:807 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:40:52.115 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:54.510 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:56.883 | ERROR    | __main__:update_top_products:712 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:56.883 | ERROR    | __main__:update_sales_by_category:658 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:40:56.886 | ERROR    | __main__:update_sales_forecast:807 - ❌ Erro ao buscar dados: 'data'
+2026-03-26 12:41:00.808 | ERROR    | __main__:fetch_dashboard_data:572 - ❌ Erro ao buscar dados: 404
+2026-03-26 12:41:02.569 | INFO     | __main__:<module>:813 - 🎨 Dashboard iniciando...
+2026-03-26 12:41:02.569 | INFO     | __main__:<module>:814 - 📡 API Base URL: http://localhost:8080
+2026-03-26 12:41:03.867 | WARNING  | __main__:update_sales_by_category:631 - ⚠️  Token não encontrado
+2026-03-26 12:41:03.868 | WARNING  | __main__:update_top_products:684 - ⚠️  Token não encontrado
+2026-03-26 12:41:03.870 | WARNING  | __main__:update_sales_forecast:738 - ⚠️  Token não encontrado
+2026-03-26 12:41:11.242 | INFO     | __main__:<module>:813 - 🎨 Dashboard iniciando...
+2026-03-26 12:41:11.242 | INFO     | __main__:<module>:814 - 📡 API Base URL: http://localhost:8080
+2026-03-26 12:41:14.103 | WARNING  | __main__:update_sales_by_category:631 - ⚠️  Token não encontrado
+2026-03-26 12:41:14.104 | WARNING  | __main__:update_top_products:684 - ⚠️  Token não encontrado
+2026-03-26 12:41:14.104 | WARNING  | __main__:update_sales_forecast:738 - ⚠️  Token não encontrado
+2026-03-26 12:41:18.843 | INFO     | __main__:<module>:813 - 🎨 Dashboard iniciando...
+2026-03-26 12:41:18.844 | INFO     | __main__:<module>:814 - 📡 API Base URL: http://localhost:8080
+2026-03-26 12:41:20.978 | WARNING  | __main__:update_sales_by_category:631 - ⚠️  Token não encontrado
+2026-03-26 12:41:20.979 | WARNING  | __main__:update_top_products:684 - ⚠️  Token não encontrado
+2026-03-26 12:41:20.981 | WARNING  | __main__:update_sales_forecast:738 - ⚠️  Token não encontrado
+2026-03-26 12:41:25.668 | INFO     | __main__:<module>:813 - 🎨 Dashboard iniciando...
+2026-03-26 12:41:25.669 | INFO     | __main__:<module>:814 - 📡 API Base URL: http://localhost:8080
+2026-03-26 12:41:27.115 | WARNING  | __main__:update_sales_by_category:631 - ⚠️  Token não encontrado
+2026-03-26 12:41:27.116 | WARNING  | __main__:update_top_products:684 - ⚠️  Token não encontrado
+2026-03-26 12:41:27.119 | WARNING  | __main__:update_sales_forecast:738 - ⚠️  Token não encontrado
+2026-03-26 12:41:30.756 | INFO     | __main__:<module>:813 - 🎨 Dashboard iniciando...
+2026-03-26 12:41:30.758 | INFO     | __main__:<module>:814 - 📡 API Base URL: http://localhost:8080
+2026-03-26 12:41:32.846 | WARNING  | __main__:update_sales_by_category:631 - ⚠️  Token não encontrado
+2026-03-26 12:41:32.847 | WARNING  | __main__:update_top_products:684 - ⚠️  Token não encontrado
+2026-03-26 12:41:32.850 | WARNING  | __main__:update_sales_forecast:738 - ⚠️  Token não encontrado
+2026-03-26 12:41:54.369 | INFO     | __main__:<module>:813 - 🎨 Dashboard iniciando...
+2026-03-26 12:41:54.369 | INFO     | __main__:<module>:814 - 📡 API Base URL: http://localhost:8080
+2026-03-26 13:30:10.650 | INFO     | __main__:<module>:801 - 🎨 Dashboard iniciando...
+2026-03-26 13:30:10.652 | INFO     | __main__:<module>:802 - 📡 API Base URL: http://localhost:8080
+2026-03-26 13:30:11.585 | INFO     | __main__:<module>:801 - 🎨 Dashboard iniciando...
+2026-03-26 13:30:11.586 | INFO     | __main__:<module>:802 - 📡 API Base URL: http://localhost:8080
+2026-03-26 13:30:12.608 | WARNING  | __main__:update_sales_by_category:619 - ⚠️  Token não encontrado
+2026-03-26 13:30:12.609 | WARNING  | __main__:update_sales_forecast:726 - ⚠️  Token não encontrado
+2026-03-26 13:30:12.609 | WARNING  | __main__:update_top_products:672 - ⚠️  Token não encontrado
+2026-03-26 13:30:12.998 | WARNING  | __main__:update_sales_by_category:619 - ⚠️  Token não encontrado
+2026-03-26 13:30:12.999 | WARNING  | __main__:update_top_products:672 - ⚠️  Token não encontrado
+2026-03-26 13:30:13.027 | WARNING  | __main__:update_sales_forecast:726 - ⚠️  Token não encontrado

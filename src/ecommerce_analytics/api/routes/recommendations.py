@@ -8,9 +8,12 @@ from loguru import logger
 from pydantic import BaseModel
 
 from ecommerce_analytics.api.auth import get_current_user
+from ecommerce_analytics.services.ml_service import RecommendationService
 
 router = APIRouter()
 
+def get_recommendation_service() -> RecommendationService:
+    return RecommendationService()
 
 # ========== SCHEMAS ==========
 class RecommendationRequest(BaseModel):
@@ -28,27 +31,26 @@ class RecommendationResponse(BaseModel):
 
 # ========== ENDPOINTS ==========
 @router.post("/products", response_model=RecommendationResponse)
-async def get_product_recommendations(
+def get_product_recommendations(
     request: RecommendationRequest,
     current_user: dict = Depends(get_current_user),
+    service: RecommendationService = Depends(get_recommendation_service)
 ):
     """
-    Retorna recomendações de produtos para um cliente.
+    Retorna recomendações de produtos para um cliente usando SQL heurístico (BigQuery).
     Requer autenticação.
     """
     try:
         if not request.customer_id:
             raise ValueError("customer_id é obrigatório")
 
-        logger.info(f"💡 Recomendações solicitadas por: {current_user['username']}")
+        logger.info(f"💡 Recomendações solicitadas por: {current_user['username']} para o cliente {request.customer_id}")
+
+        recommendations = service.get_product_recommendations(customer_id=request.customer_id, limit=3)
 
         return {
             "status": "success",
-            "recommendations": [
-                {"product_id": "P001", "name": "Product A", "score": 0.95},
-                {"product_id": "P002", "name": "Product B", "score": 0.87},
-                {"product_id": "P003", "name": "Product C", "score": 0.79},
-            ],
+            "recommendations": recommendations,
         }
     except ValueError as e:
         raise HTTPException(status_code=400, detail=str(e)) from e
