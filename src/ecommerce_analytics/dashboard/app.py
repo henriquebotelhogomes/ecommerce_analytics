@@ -14,7 +14,7 @@ from loguru import logger
 # ========== CONFIGURAÇÃO ==========
 API_BASE_URL = os.getenv("API_BASE_URL", "http://localhost:8080")
 DASH_HOST = os.getenv("DASH_HOST", "0.0.0.0")
-DASH_PORT = int(os.getenv("DASH_PORT", 8050))
+DASH_PORT = int(os.getenv("PORT", os.getenv("DASH_PORT", 8050)))
 
 logger.info("🎨 Dashboard iniciando...")
 logger.info(f"📡 API Base URL: {API_BASE_URL}")
