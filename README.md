@@ -60,7 +60,7 @@ cp .env.example .env
 
 ### Executar  Localmente
 ```
-# Terminal 1: API (http://localhost:8000)
+# Terminal 1: API (http://localhost:8080)
 make run-api
 
 # Terminal 2: Dashboard (http://localhost:8050)
@@ -73,7 +73,7 @@ make test
 ```bash
 docker-compose up -d
 
-# API: http://localhost:8000/docs
+# API: http://localhost:8080/docs
 # Dashboard: http://localhost:8050
 # Logs: docker-compose logs -f
 ```
@@ -113,7 +113,7 @@ GET    /api/v1/analytics/sales-by-category      → Vendas por categoria
 GET    /api/v1/forecast/sales-forecast          → Previsão 30 dias
 GET    /health                                  → Health check
 ````
-* Documentação Interativa: http://localhost:8000/docs (Swagger UI)
+* Documentação Interativa: http://localhost:8080/docs (Swagger UI)
 * **Credenciais Demo:**
   * **Username**: admin
   * **Password**: admin123
@@ -166,7 +166,7 @@ docker build -f Dockerfile.dash -t ecommerce-analytics-dash:latest .
 docker-compose up -d
 
 # Ou individual
-docker run -p 8000:8000 ecommerce-analytics:latest
+docker run -p 8080:8080 ecommerce-analytics:latest
 docker run -p 8050:8050 ecommerce-analytics-dash:latest
 ```
 ---
@@ -209,7 +209,7 @@ curl https://sua-api-url.run.app/health
         │                         │
         ▼                         ▼
 ┌──────────────────┐      ┌──────────────────┐
-│   FastAPI (8000) │      │  Plotly Dash     │
+│   FastAPI (8080) │      │  Plotly Dash     │
 │   - Auth (JWT)   │      │  (8050)          │
 │   - Analytics    │      │  - Callbacks     │
 │   - Forecast     │      │  - Real-time     │

@@ -8,7 +8,7 @@ services:
       dockerfile: Dockerfile
     container_name: ecommerce-api
     ports:
-      - "8000:8080"
+      - "8080:8080"
     environment:
       - GCP_PROJECT_ID=ecommerce-analytics-491215
       - GCP_DATASET_ID=olist_ecommerce

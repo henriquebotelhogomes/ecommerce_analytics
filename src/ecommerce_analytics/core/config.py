@@ -21,7 +21,7 @@ class Settings(BaseSettings):
 
     # ========== SERVER ==========
     host: str = Field(default="0.0.0.0", description="Server host")
-    port: int = Field(default=8000, description="Server port")
+    port: int = Field(default=8080, description="Server port")
     reload: bool = Field(default=False, description="Auto-reload on code changes")
 
     # ========== SECURITY ==========
@@ -35,7 +35,7 @@ class Settings(BaseSettings):
 
     # ========== CORS ==========
     cors_origins: str = Field(
-        default="http://localhost,http://localhost:3000,http://localhost:8000,http://localhost:8501",
+        default="http://localhost,http://localhost:3000,http://localhost:8080,http://localhost:8501",
         description="Comma-separated CORS origins",
     )
 
