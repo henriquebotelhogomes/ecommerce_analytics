@@ -148,7 +148,7 @@ jobs:
             --platform managed \
             --region southamerica-east1 \
             --allow-unauthenticated \
-            --set-env-vars "API_BASE_URL=${{ steps.deploy_api.outputs.API_URL }}" \
+            --set-env-vars "ENVIRONMENT=production,API_BASE_URL=${{ steps.deploy_api.outputs.API_URL }}" \
             --format="value(status.url)")
           echo "Deployed Dashboard to: $DASHBOARD_URL"
 
