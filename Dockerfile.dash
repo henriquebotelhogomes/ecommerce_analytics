@@ -12,7 +12,7 @@ RUN python -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
 RUN pip install --upgrade pip setuptools wheel && \
-    pip install -e .
+    pip install -e ".[dashboard]"
 
 FROM python:3.12-slim
 
@@ -39,4 +39,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
 
 EXPOSE 8080
 
-CMD exec python src/ecommerce_analytics/dashboard/app.py
+CMD exec gunicorn --bind 0.0.0.0:${PORT:-8080} --workers 1 --threads 8 --timeout 0 ecommerce_analytics.dashboard.app:app.server
