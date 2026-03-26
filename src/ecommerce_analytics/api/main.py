@@ -34,8 +34,8 @@ app = FastAPI(
     description="Production-ready analytics platform with BigQuery integration",
     version="1.0.0",
     lifespan=lifespan,
-    docs_url="/docs" if settings.is_development() else None,  # Desabilitar docs em produção
-    redoc_url="/redoc" if settings.is_development() else None,
+    docs_url="/docs",
+    redoc_url="/redoc",
 )
 
 # ========== CORS MIDDLEWARE ==========
