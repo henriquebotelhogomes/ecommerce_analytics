@@ -3,7 +3,7 @@ Pytest Configuration and Fixtures
 Configuração centralizada para testes com mocks para BigQuery.
 """
 
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock
 
 import pytest
 from fastapi.testclient import TestClient
@@ -11,11 +11,10 @@ from fastapi.testclient import TestClient
 from ecommerce_analytics.api.main import app
 
 # ========== FIXTURES BÁSICAS ==========
-
-
 from ecommerce_analytics.api.routes.analytics import get_analytics_service
 from ecommerce_analytics.api.routes.forecast import get_forecast_service
 from ecommerce_analytics.api.routes.recommendations import get_recommendation_service
+
 
 @pytest.fixture
 def client(mock_analytics_service, mock_forecast_service, mock_ml_service):
