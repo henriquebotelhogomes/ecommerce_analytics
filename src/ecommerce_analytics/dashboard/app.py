@@ -634,6 +634,6 @@ def update_recommendations(customer_id, top_n, token):
 # ========== ENTRY POINT ==========
 if __name__ == "__main__":
     logger.info(f"🚀 Dashboard rodando em http://{DASH_HOST}:{DASH_PORT}")
-    
+
     is_development = os.getenv("ENVIRONMENT", "production").lower() == "development"
     app.run(host=DASH_HOST, port=DASH_PORT, debug=is_development)
