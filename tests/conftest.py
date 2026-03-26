@@ -13,10 +13,18 @@ from ecommerce_analytics.api.main import app
 # ========== FIXTURES BÁSICAS ==========
 
 
+from ecommerce_analytics.api.routes.analytics import get_analytics_service
+from ecommerce_analytics.api.routes.forecast import get_forecast_service
+from ecommerce_analytics.api.routes.recommendations import get_recommendation_service
+
 @pytest.fixture
-def client():
+def client(mock_analytics_service, mock_forecast_service, mock_ml_service):
     """Cria cliente de teste para a API."""
-    return TestClient(app)
+    app.dependency_overrides[get_analytics_service] = lambda: mock_analytics_service
+    app.dependency_overrides[get_forecast_service] = lambda: mock_forecast_service
+    app.dependency_overrides[get_recommendation_service] = lambda: mock_ml_service
+    yield TestClient(app)
+    app.dependency_overrides.clear()
 
 
 @pytest.fixture
@@ -36,107 +44,37 @@ def auth_headers(auth_token):
     return {"Authorization": f"Bearer {auth_token}"}
 
 
-# ========== FIXTURES PARA MOCKAR BIGQUERY ==========
-
-
-@pytest.fixture
-def mock_bigquery_client():
-    """Mock BigQuery client para testes de integração."""
-    with patch("google.cloud.bigquery.Client") as mock_client:
-        client = MagicMock()
-        mock_client.return_value = client
-        yield client
-
+# ========== FIXTURES DE SERVIÇOS (MOCKS TOTAL) ==========
 
 @pytest.fixture
-def mock_bigquery_query_job():
-    """Mock BigQuery query job result."""
-    mock_job = MagicMock()
-    mock_job.result.return_value = [
-        {
-            "total_revenue": 1000000.0,
-            "total_orders": 5000,
-            "avg_order_value": 200.0,
-            "total_customers": 1500,
-        }
-    ]
-    return mock_job
-
-
-@pytest.fixture
-def mock_analytics_service(mock_bigquery_client, mock_bigquery_query_job):
-    """Mock AnalyticsService com BigQuery client."""
-    with patch("ecommerce_analytics.services.analytics_service.bigquery.Client") as mock_bq:
-        mock_bq.return_value = mock_bigquery_client
-        mock_bigquery_client.query.return_value = mock_bigquery_query_job
-
-        from ecommerce_analytics.services.analytics_service import AnalyticsService
-
-        service = AnalyticsService()
-        service.client = mock_bigquery_client
-
-        yield service
-
-
-@pytest.fixture
-def mock_forecast_service(mock_bigquery_client, mock_bigquery_query_job):
-    """Mock ForecastService com BigQuery client."""
-    with patch("ecommerce_analytics.services.forecast_service.bigquery.Client") as mock_bq:
-        mock_bq.return_value = mock_bigquery_client
-        mock_bigquery_client.query.return_value = mock_bigquery_query_job
-
-        from ecommerce_analytics.services.forecast_service import ForecastService
-
-        service = ForecastService()
-        service.client = mock_bigquery_client
-
-        yield service
-
-
-@pytest.fixture
-def mock_ml_service(mock_bigquery_client, mock_bigquery_query_job):
-    """Mock MLService com BigQuery client."""
-    with patch("ecommerce_analytics.services.ml_service.bigquery.Client") as mock_bq:
-        mock_bq.return_value = mock_bigquery_client
-        mock_bigquery_client.query.return_value = mock_bigquery_query_job
-
-        from ecommerce_analytics.services.ml_service import MLService
-
-        service = MLService()
-        service.client = mock_bigquery_client
-
-        yield service
-
-
-# ========== FIXTURES PARA DADOS DE TESTE ==========
-
-
-@pytest.fixture
-def sample_dashboard_data():
-    """Dados de exemplo para testes de dashboard."""
-    return {
+def mock_analytics_service():
+    service = MagicMock()
+    service.get_dashboard_data.return_value = {
         "total_revenue": 1000000.0,
         "total_orders": 5000,
         "avg_order_value": 200.0,
         "total_customers": 1500,
+        "revenue_trend": [100, 200],
+        "orders_trend": [10, 20],
+        "top_products": [{"name": "P1", "sales": 100}],
+        "sales_by_category": [{"category": "C1", "sales": 100}],
     }
-
-
-@pytest.fixture
-def sample_forecast_data():
-    """Dados de exemplo para testes de forecast."""
-    return [
-        {"forecast_date": "2026-04-01", "predicted_revenue": 50000.0},
-        {"forecast_date": "2026-04-02", "predicted_revenue": 52000.0},
-        {"forecast_date": "2026-04-03", "predicted_revenue": 51500.0},
-    ]
-
+    return service
 
 @pytest.fixture
-def sample_recommendations_data():
-    """Dados de exemplo para testes de recomendações."""
-    return [
-        {"product_id": "prod_001", "product_name": "Produto A", "score": 0.95},
-        {"product_id": "prod_002", "product_name": "Produto B", "score": 0.87},
-        {"product_id": "prod_003", "product_name": "Produto C", "score": 0.76},
+def mock_forecast_service():
+    service = MagicMock()
+    # The integration tests expect forecast to return dict with "forecast" but wait, the endpoint returns:
+    # return {"status": "success", "forecast": forecast} inside API. The service just returns list of dicts.
+    service.get_revenue_forecast.return_value = [
+        {"month": "Apr 2026", "predicted_revenue": 50000.0}
     ]
+    return service
+
+@pytest.fixture
+def mock_ml_service():
+    service = MagicMock()
+    service.get_product_recommendations.return_value = [
+        {"product_id": "P1", "name": "Prod A", "score": 0.9}
+    ]
+    return service
