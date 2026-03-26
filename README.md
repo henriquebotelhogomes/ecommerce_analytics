@@ -15,7 +15,7 @@
 
 Solução **enterprise-grade** que integra:
 
-- ✅ **API REST** profissional com FastAPI + JWT + OAuth2
+- ✅ **API REST** profissional com FastAPI + JWT
 - ✅ **Dashboard interativo** com Plotly Dash (callbacks em tempo real)
 - ✅ **BigQuery** para análise de dados em escala (100M+ registros)
 - ✅ **BigQuery ML** para previsão de vendas (ARIMA, Linear Regression)
@@ -81,22 +81,22 @@ docker-compose up -d
 
 ## 📊 Stack Técnico
 
-|Camada   |Tecnologia   |Versão   |
-|---|---|---|
-|API   |FastAPI   |0.100+   |
-|Dashboard   |Plotly Dash   |2.14+   |
-|Database   |BigQuery   |Cloud Native   |
-|ML   |BigQuery ML   |ARIMA, Linear Regression   |
-|Auth   |JWT + OAuth2   |FastAPI Security   |
-|Logging   |Loguru   |Estruturado   |
-|Testing   |Pytest   |Unit + Integration   |
-|Linting   |Ruff   |Zero Config   |
-|Formatting   |Black   |Opinionated   |
-|Type Checking   |Mypy   |Strict Mode   |
-|Container   |Docker   |Multi-stage   |
-|Orchestration   |Docker Compose   |Local Dev   |
-|CI/CD   |GitHub Actions   |Automated   |
-|Deploy   |Google Cloud Run   |Serverless   |
+| Camada        | Tecnologia       | Versão                   |
+|---------------|------------------|--------------------------|
+| API           | FastAPI          | 0.100+                   |
+| Dashboard     | Plotly Dash      | 2.14+                    |
+| Database      | BigQuery         | Cloud Native             |
+| ML            | BigQuery ML      | ARIMA, Linear Regression |
+| Auth          | JWT              | FastAPI Security         |
+| Logging       | Loguru           | Estruturado              |
+| Testing       | Pytest           | Unit + Integration       |
+| Linting       | Ruff             | Zero Config              |
+| Formatting    | Black            | Opinionated              |
+| Type Checking | Mypy             | Strict Mode              |
+| Container     | Docker           | Multi-stage              |
+| Orchestration | Docker Compose   | Local Dev                |
+| CI/CD         | GitHub Actions   | Automated                |
+| Deploy        | Google Cloud Run | Serverless               |
 ---
 ## 📚 Documentação 
 ### API Endpoints
@@ -150,7 +150,8 @@ make type-check
 # Tudo junto
 make quality
 ```
-**Critério**: 0 erros em ruff, black, mypy
+
+* **Critério**: 0 erros em ruff, black, mypy
 ---
 ## 🐳 Docker
 ```bash
@@ -251,3 +252,67 @@ logger.error("❌ Erro ao buscar dados", exc_info=True)
 * Métricas: Cloud Monitoring
 * Alertas: Cloud Alerting
 ---
+## 📝 Estrutura do Projeto
+```
+ecommerce_analytics/
+├── src/ecommerce_analytics/
+│   ├── api/
+│   │   ├── main.py              # FastAPI app
+│   │   ├── auth.py              # JWT logic
+│   │   └── routes/
+│   │       ├── auth.py          # Auth endpoints
+│   │       ├── analytics.py      # Analytics endpoints
+│   │       ├── forecast.py       # Forecast endpoints
+│   │       └── recommendations.py # Recommendations endpoints
+│   ├── core/
+│   │   ├── config.py            # Settings
+│   │   ├── exceptions.py         # Custom exceptions
+│   │   └── error_handler.py      # Error handlers
+│   ├── services/
+│   │   ├── analytics_service.py  # Analytics logic
+│   │   ├── forecast_service.py   # Forecast logic
+│   │   └── ml_service.py         # ML logic
+│   ├── dashboard/
+│   │   └── app.py               # Plotly Dash app
+│   └── __init__.py
+├── tests/
+│   ├── unit/
+│   │   ├── test_config.py
+│   │   └── test_auth.py
+│   ├── integration/
+│   │   └── test_api.py
+│   └── conftest.py
+├── .github/workflows/
+│   └── ci.yml                   # CI/CD pipeline
+├── Dockerfile                    # API container
+├── Dockerfile.dash              # Dashboard container
+├── docker-compose.yml           # Local development
+├── pyproject.toml               # Project config
+├── Makefile                     # Commands
+└── README.md                    # This file
+```
+---
+## 🎯 Próximos Passos
+- [ ] Implementar rate limiting para proteger a API
+- [ ] Adicionar webhooks para eventos importantes (ex: novas vendas)
+- [ ] Expandir ML models (Prophet, XGBoost) para previsões mais avançadas
+- [ ] Implementar cache com Redis para otimizar consultas frequentes
+- [ ] Adicionar testes E2E com Playwright para garantir a experiência do usuário
+- [ ] Configurar APM (Application Performance Monitoring) para monitorar performance
+- [ ] Gerenciamento de usuários e permissões (RBAC) para controle de acesso
+- [ ] Integração com ferramentas de visualização de dados (e.g., Looker Studio)
+- [ ] Implementar streaming de dados em tempo real (e.g., Pub/Sub)
+---
+
+## 👤 Autor: 
+### Henrique Botelho Gomes
+- 🔗 GitHub: [henriquebotelhogomes](https://github.com/henriquebotelhogomes/)
+- 💼 LinkedIn: [henriquebotelhogomes](https://www.linkedin.com/in/henriquebotelhogomes/)
+- 📧 Email: [henriquebotelho1@gmail.com](gmailto:henriquebotelho1@gmail.com)
+---
+
+## 🙏 Agradecimentos
+- [FastAPI](https://fastapi.tiangolo.com/) - Modern web framework
+- [Plotly Dash](https://dash.plotly.com/) - Interactive dashboards
+- [Google BigQuery](https://cloud.google.com/bigquery) - Data warehouse
+- [Pydantic](https://docs.pydantic.dev/latest/) - Data validation
