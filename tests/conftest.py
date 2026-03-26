@@ -45,6 +45,7 @@ def auth_headers(auth_token):
 
 # ========== FIXTURES DE SERVIÇOS (MOCKS TOTAL) ==========
 
+
 @pytest.fixture
 def mock_analytics_service():
     service = MagicMock()
@@ -60,6 +61,7 @@ def mock_analytics_service():
     }
     return service
 
+
 @pytest.fixture
 def mock_forecast_service():
     service = MagicMock()
@@ -69,6 +71,7 @@ def mock_forecast_service():
         {"month": "Apr 2026", "predicted_revenue": 50000.0}
     ]
     return service
+
 
 @pytest.fixture
 def mock_ml_service():
