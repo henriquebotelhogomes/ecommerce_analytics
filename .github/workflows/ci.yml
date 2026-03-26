@@ -25,7 +25,7 @@ jobs:
         run: pip install -e ".[dev]"
 
       - name: Ruff check
-        run: ruff check src/ tests/ --check
+        run: ruff check src/ tests/
 
       - name: Black format check
         run: black src/ tests/ --check
