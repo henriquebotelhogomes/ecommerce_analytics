@@ -28,6 +28,7 @@ app = Dash(
     title="E-commerce Analytics Dashboard",
     suppress_callback_exceptions=True,
 )
+server = app.server
 
 # ========== LAYOUT ==========
 app.layout = html.Div(
