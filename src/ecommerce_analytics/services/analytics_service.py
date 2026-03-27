@@ -29,14 +29,15 @@ class AnalyticsService:
         """
         trends_df = self.bq_client.query(trends_sql)
 
-        # 2. Obter Top Produtos (Por ID)
+        # 2. Obter Top Produtos (Por ID e Categoria)
         top_products_sql = f"""
         SELECT
-            p.product_id as name,
+            p.product_id,
+            p.product_category_name,
             SUM(oi.price) as sales
         FROM `{self.project}.{self.dataset}.order_items` oi
         JOIN `{self.project}.{self.dataset}.products` p ON oi.product_id = p.product_id
-        GROUP BY 1
+        GROUP BY 1, 2
         ORDER BY sales DESC
         LIMIT 20
         """
@@ -73,7 +74,10 @@ class AnalyticsService:
         # Processar top_products
         top_products_list = []
         for _, p_row in top_products_df.iterrows():
-            name = str(p_row["name"])[:8] + "..."  # Truncar ID como nome se não houver alias
+            cat = p_row.get("product_category_name")
+            cat_name = str(cat).replace('_', ' ').title() if pd.notna(cat) and cat else "Diversos"
+            short_id = str(p_row["product_id"])[:5]
+            name = f"{cat_name} ({short_id})"
             top_products_list.append({"name": name, "sales": float(p_row.get("sales") or 0)})
 
         # Processar categories
