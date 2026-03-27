@@ -75,7 +75,7 @@ class AnalyticsService:
         top_products_list = []
         for _, p_row in top_products_df.iterrows():
             cat = p_row.get("product_category_name")
-            cat_name = str(cat).replace('_', ' ').title() if pd.notna(cat) and cat else "Diversos"
+            cat_name = str(cat).replace("_", " ").title() if pd.notna(cat) and cat else "Diversos"
             short_id = str(p_row["product_id"])[:5]
             name = f"{cat_name} ({short_id})"
             top_products_list.append({"name": name, "sales": float(p_row.get("sales") or 0)})
